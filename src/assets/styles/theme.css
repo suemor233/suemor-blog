@@ -1,0 +1,5 @@
+@layer base {
+  .theme-container {
+    @apply bg-white bg-opacity-30 text-black shadow-xl transition-colors dark:bg-[#121212] dark:bg-opacity-70 dark:text-[#dee1e7];
+  }
+}
