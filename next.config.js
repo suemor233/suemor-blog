@@ -21,6 +21,9 @@ const configs = withPlugins(plugins, {
   },
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  images:{
+    domains: ['y.suemor.com'],
   }
 })
 

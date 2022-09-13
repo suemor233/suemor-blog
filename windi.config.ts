@@ -45,7 +45,6 @@ export default defineConfig({
         desktop: { raw: '(min-width: 1100px)' },
         tablet: { raw: '(max-width: 1099px)' },
         wider: { raw: '(min-width: 1500px)' },
-
         w900: { raw: '(max-width: 900px)' },
       },
       fontFamily: {
