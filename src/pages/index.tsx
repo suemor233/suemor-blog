@@ -1,9 +1,10 @@
 import type { NextPage } from 'next'
+import UserInfo from '~/components/in-page/Home/user-info';
 
 const Home: NextPage = () => {
   return (
-    <div>
-        <p>我是文章</p>
+    <div className='flex justify-center'>
+      <UserInfo/>
     </div>
   )
 }
