@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite'
 import NextLink from 'next/link'
 import { useEffect } from 'react'
 import type { IconType } from 'react-icons'
-import { IoAlbums, IoHome, IoPeopleSharp, IoPersonSharp } from 'react-icons/io5'
+import { IoAlbums, IoHome, IoPeopleSharp, IoPersonSharp,IoSunnyOutline } from 'react-icons/io5'
 
 import { Avatar } from '~/components/universal/Avatar'
 
@@ -45,23 +45,23 @@ const Header = () => {
   }, [])
   return (
     <header className="flex p-3 justify-between">
-      <motion.section whileHover={{ scale: 1.1, type: 'spring' }}>
-        <NextLink
-          href={'/'}
-          className="flex items-center transition-all duration-500 p-2 cursor-pointer rounded-md hover:bg-blue-50"
-        >
-          <Avatar
-            shadow={false}
-            imageUrl={'https://y.suemor.com/images89030875.jpeg' || ''}
-            useRandomColor={false}
-            size={35}
-            lazy={false}
-          />
-          <span className="ml-3 text-blue-500 text-lg select-none phone:hidden">suemor</span>
-        </NextLink>
-      </motion.section>
+      <NextLink
+        href={'/'}
+        className="flex items-center transition-all duration-500 p-2 cursor-pointer rounded-md"
+      >
+        <Avatar
+          shadow={false}
+          imageUrl={'https://y.suemor.com/images89030875.jpeg' || ''}
+          useRandomColor={false}
+          size={35}
+          lazy={false}
+        />
+        <span className="ml-3 text-blue-500 text-lg select-none phone:hidden">
+          suemor
+        </span>
 
-      <nav className="flex items-center gap-3 phone:gap-0">
+      </NextLink>
+      <nav className="flex items-center flex-row gap-3 phone:gap-0">
         {navigation.map(({ path, Icon, label }, index) => (
           <motion.section
             key={path}
@@ -69,7 +69,7 @@ const Header = () => {
           >
             <NextLink
               href={path}
-              className="text-lg transition-all items-center duration-500 rounded-md text-blue-400 px-3  hover:text-blue-600"
+              className="text-lg transition-all items-center duration-500 rounded-md text-blue-500 px-3  hover:text-blue-600 flex"
             >
               <Icon
                 size={appStore.viewport.mobile ? 23 : 15}

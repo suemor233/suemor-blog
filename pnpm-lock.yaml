@@ -7,6 +7,7 @@ specifiers:
   '@types/node': 18.7.16
   '@types/react': 18.0.19
   '@types/react-dom': 18.0.6
+  classnames: ^2.3.2
   clsx: ^1.2.1
   dotenv: ^16.0.2
   eslint: 8.23.0
@@ -32,6 +33,7 @@ specifiers:
   windicss-webpack-plugin: ^1.7.6
 
 dependencies:
+  classnames: 2.3.2
   clsx: 1.2.1
   framer-motion: 7.3.5_biqbaboplfbrettd7655fr4n2y
   mobx: 6.6.2
@@ -1241,6 +1243,10 @@ packages:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
     dev: true
+
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: false
 
   /clsx/1.2.1:
     resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}

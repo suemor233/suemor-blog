@@ -1,5 +1,6 @@
 import { defineConfig } from 'windicss/helpers'
 import plugin from 'windicss/plugin'
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 export default defineConfig({
   extract: {
@@ -48,9 +49,8 @@ export default defineConfig({
         w900: { raw: '(max-width: 900px)' },
       },
       fontFamily: {
-        serif: 'var(--serif-font)',
-        sans: 'var(--sans-font)',
-        mono: 'var(--monospace-font)',
+       ui: ['FZMiaoWu', ...defaultTheme.fontFamily.sans],
+       content: ['Noto Sans TC', 'Noto Sans SC', '微軟正黑體', ...defaultTheme.fontFamily.serif],
       }
     },
   },
