@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="flex-1 flex items-end justify-center text-gray-600 pb-5 flex-wrap">
+    <footer className="flex-1 flex items-end justify-center text-gray-600 pb-5 mt-10 flex-wrap">
       <span>© 2022&nbsp;</span>
       <a href="http://localhost:3477/" className="text-blue-500">SuemorのBlog</a>
       <span>.</span>

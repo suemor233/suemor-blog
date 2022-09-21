@@ -1,6 +1,6 @@
 import { defineConfig } from 'windicss/helpers'
 import plugin from 'windicss/plugin'
-const defaultTheme = require('tailwindcss/defaultTheme')
+import defaultTheme from 'windicss/defaultTheme'
 
 export default defineConfig({
   extract: {
