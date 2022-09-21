@@ -1,9 +1,8 @@
-import { motion } from 'framer-motion'
+import { m } from 'framer-motion'
 import { observer } from 'mobx-react-lite'
 import NextLink from 'next/link'
-import { useEffect } from 'react'
 import type { IconType } from 'react-icons'
-import { IoAlbums, IoHome, IoPeopleSharp, IoPersonSharp,IoSunnyOutline } from 'react-icons/io5'
+import { IoAlbums, IoHome, IoPeopleSharp, IoPersonSharp } from 'react-icons/io5'
 
 import { Avatar } from '~/components/universal/Avatar'
 
@@ -39,10 +38,7 @@ export const navigation: NavItem[] = [
 ]
 
 const Header = () => {
-  const { appStore } = useStore()
-  useEffect(() => {
-    console.log(appStore.viewport)
-  }, [])
+  const { appStore,userStore } = useStore()
   return (
     <header className="flex p-3 justify-between">
       <NextLink
@@ -51,19 +47,19 @@ const Header = () => {
       >
         <Avatar
           shadow={false}
-          imageUrl={'https://y.suemor.com/images89030875.jpeg' || ''}
+          imageUrl={userStore.master?.avatar || ''}
           useRandomColor={false}
           size={35}
           lazy={false}
         />
         <span className="ml-3 text-blue-500 text-lg select-none phone:hidden">
-          suemor
+          {userStore.master?.username}
         </span>
 
       </NextLink>
       <nav className="flex items-center flex-row gap-3 phone:gap-0">
         {navigation.map(({ path, Icon, label }, index) => (
-          <motion.section
+          <m.section
             key={path}
             whileHover={{ scale: 1.1, type: 'spring' }}
           >
@@ -77,7 +73,7 @@ const Header = () => {
               />
               <span className="phone:hidden">{label}</span>
             </NextLink>
-          </motion.section>
+          </m.section>
         ))}
       </nav>
     </header>

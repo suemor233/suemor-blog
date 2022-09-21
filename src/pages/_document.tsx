@@ -19,21 +19,19 @@ function Document() {
 
         {/* Custom Fonts */}
         <link
-          rel="preload"
           crossOrigin="anonymous"
           href="/fonts/CattieRegular-EaBG8.woff2"
           type="font/woff2"
           as="font"
         />
         <link
-          rel="preload"
           crossOrigin="anonymous"
           href="/fonts/FZMiaoWu_GB18030.woff2"
           type="font/woff2"
           as="font"
         />
       </Head>
-      <body className=" font-content antialiased">
+      <body className="font-content antialiased">
         <Main />
         <NextScript />
       </body>

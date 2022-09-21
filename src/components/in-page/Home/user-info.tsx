@@ -1,20 +1,23 @@
+import { observer } from 'mobx-react-lite'
 import { Avatar } from '~/components/universal/Avatar'
+import { useStore } from '../../../store/index';
 
 const UserInfo = () => {
+  const {userStore} = useStore()
   return (
     <figure>
       <div className='flex justify-center'>
         <Avatar
           shadow={false}
-          imageUrl={'https://y.suemor.com/images89030875.jpeg' || ''}
+          imageUrl={userStore.master?.avatar || ''}
           useRandomColor={false}
           size={85}
           lazy={false}
         />
       </div>
-      <p className="text-5xl font-ui">suemor</p>
+      <p className="text-5xl font-ui">{userStore.username}</p>
     </figure>
   )
 }
 
-export default UserInfo
+export default observer( UserInfo)

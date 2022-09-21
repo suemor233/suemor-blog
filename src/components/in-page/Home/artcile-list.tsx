@@ -1,4 +1,4 @@
-import { Variants, motion } from 'framer-motion'
+import { Variants, m } from 'framer-motion'
 
 const ArticleList = () => {
   return (
@@ -41,7 +41,7 @@ const backdropMotion: Variants = {
 
 const Item = () => {
   return (
-    <motion.section
+    <m.section
       variants={backdropMotion}
       initial="exit"
       animate="enter"
@@ -63,7 +63,7 @@ const Item = () => {
         <span>折腾记录</span>
         <span>博客记录</span>
       </div>
-    </motion.section>
+    </m.section>
   )
 }
 
