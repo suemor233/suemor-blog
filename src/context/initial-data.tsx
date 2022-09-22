@@ -1,7 +1,7 @@
 import type { FC, PropsWithChildren } from 'react'
 import { createContext, memo, useMemo } from 'react'
 
-import { UserModel } from '~/store/user'
+import type { UserModel } from '~/store/user'
 
 import { useStore } from '../store/index'
 

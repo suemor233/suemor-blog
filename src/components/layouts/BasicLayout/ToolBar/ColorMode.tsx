@@ -28,7 +28,7 @@ function ColorMode() {
           animate={{ fill: isDark ? '#78909C' : '#FFF59D' }}
           transition={{ type: 'spring', damping: 8, duration: 0.3 }}
         />
-        <circle fill='#5C6BC0' cx='24' cy='44' r='3' />
+        <m.circle fill='#5C6BC0' cx='24' cy='44' r='3' />
         <path fill='#9FA8DA' d='M26,45h-4c-2.2,0-4-1.8-4-4v-5h12v5C30,43.2,28.2,45,26,45z' />
         <g fill='#5C6BC0'>
           <path d='M30,41l-11.6,1.6c0.3,0.7,0.9,1.4,1.6,1.8l9.4-1.3C29.8,42.5,30,41.8,30,41z' />

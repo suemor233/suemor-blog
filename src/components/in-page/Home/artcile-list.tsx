@@ -1,25 +1,17 @@
-import { Variants, m } from 'framer-motion'
+import type { Variants} from 'framer-motion';
+import { m } from 'framer-motion'
+import { FC } from 'react';
+import { PostsPaginateType, postType } from '~/types/post';
+import NextLink from 'next/link'
 
-const ArticleList = () => {
+const ArticleList:FC<Record<'posts',PostsPaginateType>> = ({posts}) => {
+  console.log(posts);
   return (
-    <article className="flex flex-col gap-5 mt-4">
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-    </article>
+    <section className="flex flex-col gap-5 mt-4">
+      {
+        posts.postList.map(item => <Item key={item._id} post={item}/>)
+      }
+    </section>
   )
 }
 
@@ -39,9 +31,10 @@ const backdropMotion: Variants = {
   },
 }
 
-const Item = () => {
+const Item:FC<Record<'post',postType>> = ({post}) => {
+  const {title,content,created,tags,category,_id} = post
   return (
-    <m.section
+    <m.article
       variants={backdropMotion}
       initial="exit"
       animate="enter"
@@ -49,21 +42,23 @@ const Item = () => {
       whileHover={'hover'}
       className="p-4 hover:bg-gray-200 dark:hover:bg-gray-700 hover:rounded-md hover:bg-opacity-20"
     >
+      <NextLink href={`/posts/${_id}`}>
       <h2 className="text-xl cursor-pointer hover:text-blue-500 inline-block duration-300 transition-all">
-        重学CSS
+        {title}
       </h2>
+      </NextLink>
+ 
       <p className="text-gray-700 mt-2 dark:text-gray-400">
-        我是 2022 年初开始接触 web 前端的（先前写过 Android
-        ），当时我有极其少量的三件套基础，便直接开启了前端工程化的学习。显然这个决定是愚蠢的，要知道当时我连
-        es6 都不了解，看着 Vue 的官方文档更是一脸懵逼，就这样懵懵懂懂靠记忆 api
-        的方式学习了Vue的基础知识后…
+        {content}
       </p>
       <div className="mt-2 flex gap-2 text-blue-500">
-        <time>2021-12-31</time>
-        <span>折腾记录</span>
-        <span>博客记录</span>
+        <time>{created}</time>
+        <span>{category.name}</span>
+        {
+          tags.map(item => <span key={item}>{item}</span>)
+        }
       </div>
-    </m.section>
+    </m.article>
   )
 }
 

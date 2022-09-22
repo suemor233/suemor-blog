@@ -1,15 +1,19 @@
 import { AnimatePresence } from 'framer-motion'
+import { observer } from 'mobx-react-lite'
 import { NextSeo } from 'next-seo'
 import type { FC, PropsWithChildren } from 'react'
 
-export const Content: FC<PropsWithChildren> = ({ children }) => {
+import { useStore } from '../../store/index'
+
+export const Content: FC<PropsWithChildren> = observer(({ children }) => {
+  const { userStore } = useStore()
   return (
     <>
       <NextSeo
-        title={`suemor blog`}
-        description={'所谓自由就是可以说二加二等于四的自由'}
+        title={`${userStore.username}的博客`}
+        description={userStore.master?.introduce}
       />
       <AnimatePresence>{children}</AnimatePresence>
     </>
   )
-}
+})

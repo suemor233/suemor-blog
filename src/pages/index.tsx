@@ -1,20 +1,27 @@
+import { observer } from 'mobx-react-lite'
 import type { NextPage } from 'next'
+import { useEffect } from 'react'
 
+import { postPaginate } from '~/api/modules/posts'
 import ArticleList from '~/components/in-page/Home/artcile-list'
 import UserInfo from '~/components/in-page/Home/user-info'
-import { useContext } from 'react';
-import { InitialContext } from '~/context/initial-data';
+import { PostsPaginateType } from '~/types/post'
 
-const Home: NextPage = () => {
-  const context = useContext(InitialContext)
+
+const Home: NextPage<PostsPaginateType> = (props) => {
   return (
     <div className="flex flex-col items-center">
-      <div className="max-w-[45rem] mt-2 px-5">
+      <div className="w-[45rem] w900:max-w-[45rem] w900:w-auto mt-2 px-5">
         <UserInfo />
-        <ArticleList />
+        <ArticleList posts={props}/>
       </div>
     </div>
   )
 }
 
-export default Home
+Home.getInitialProps = async () => {
+  const posts = await postPaginate({ pageCurrent: 1, pageSize: 10 })
+  return posts
+}
+
+export default observer(Home)

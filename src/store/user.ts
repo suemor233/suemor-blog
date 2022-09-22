@@ -3,6 +3,7 @@ import { makeAutoObservable } from 'mobx'
 export interface UserModel {
   username:string
   avatar:string
+  introduce:string
   socialIds:Record<string,any>
 }
 
@@ -18,5 +19,9 @@ export default class UserStore {
 
   get username() {
     return this.master?.username || ''
+  }
+
+  get introduce() {
+    return this.master?.introduce || null
   }
 }

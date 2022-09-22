@@ -10,7 +10,7 @@ import { printToConsole } from '~/utils/console'
 import Footer from './Footer'
 import Header from './Header'
 import PageProgressBar from './PageProgressBar'
-import ToolBar from './ToolBar'
+import ToolBar from './ToolBar/ToolBar'
 
 const BasicLayout: FC<PropsWithChildren> = ({ children }) => {
   const { check: checkBrowser } = useCheckOldBrowser()
@@ -32,9 +32,8 @@ const BasicLayout: FC<PropsWithChildren> = ({ children }) => {
           {children}
           <Footer />
         </div>
+        <ToolBar />
       </LazyMotion>
-
-      <ToolBar />
       <div className={'bg-pic'} />
     </ThemeProvider>
   )

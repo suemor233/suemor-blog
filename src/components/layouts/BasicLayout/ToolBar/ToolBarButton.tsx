@@ -1,6 +1,6 @@
 import React from 'react'
 import { m } from 'framer-motion'
-import cn from 'classnames'
+import clsx from 'clsx'
 
 type Props = {
   title: string
@@ -16,7 +16,7 @@ function ToolBarButton({ title, onClick, className, children }: Props) {
       title={title}
       onClick={onClick}
       whileTap={{ scale: 0.8 }}
-      className={cn(
+      className={clsx(
         'theme-container m-1 inline-block rounded-lg p-1 dark:bg-opacity-70',
         className
       )}

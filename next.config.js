@@ -1,5 +1,4 @@
 const withPlugins = require('next-compose-plugins')
-const { memo } = require('react')
 const WindiCSSWebpackPlugin = require('windicss-webpack-plugin')
 
 const plugins = []
