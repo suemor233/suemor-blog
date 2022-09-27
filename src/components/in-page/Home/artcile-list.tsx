@@ -1,7 +1,8 @@
 import { Variants } from 'framer-motion'
 import { m } from 'framer-motion'
 import NextLink from 'next/link'
-import { FC, useEffect, useState } from 'react'
+import { useRouter } from 'next/router'
+import { FC, useEffect, useRef, useState } from 'react'
 
 import { postPaginate } from '~/api/modules/posts'
 import Pagination from '~/components/universal/Pagination'
@@ -10,6 +11,7 @@ import { parseDate } from '~/utils/time'
 
 const ArticleList: FC<Record<'posts', PostsPaginateType>> = ({ posts }) => {
   const [postList, setPostList] = useState<PostsPaginateType>(posts)
+  const router = useRouter()
   const updatePostList = async (page: number) => {
     const postListData = await postPaginate({ pageCurrent: page, pageSize: 10 })
     postListData && setPostList(postListData)
@@ -18,8 +20,14 @@ const ArticleList: FC<Record<'posts', PostsPaginateType>> = ({ posts }) => {
       behavior: 'smooth',
     })
   }
-  if (!postList) {
-    return <div className="h-screen">loading...</div>
+  useEffect(() => {
+    if (router.query.page) {
+      console.log('start');
+      updatePostList(Number(router.query.page) )
+    }
+  }, [router.query])
+  if (postList.postList.length <= 0) {
+    return <div className="h-screen">主人还没写过博客</div>
   }
   return (
     <m.section className="flex flex-col gap-5 mt-4">
@@ -27,11 +35,13 @@ const ArticleList: FC<Record<'posts', PostsPaginateType>> = ({ posts }) => {
         <Item key={item._id} post={item} />
       ))}
       <div className="flex justify-center mt-5">
-        <Pagination
-          total={postList.totalPages}
-          initialPage={1}
-          onChange={(page) => updatePostList(page)}
-        />
+        {postList.totalPages > 1 && (
+          <Pagination
+            total={postList.totalPages}
+            initialPage={Number(router.query.page) || 1}
+            onChange={(page) => router.push(`/?page=${page}`)}
+          />
+        )}
       </div>
     </m.section>
   )
@@ -67,9 +77,9 @@ const Item: FC<Record<'post', postType>> = ({ post }) => {
         animate="enter"
         exit="exit"
         whileHover={'hover'}
-        className="p-4 hover:bg-gray-200 dark:hover:bg-gray-700 hover:rounded-md hover:bg-opacity-20"
+        className="p-4 hover:bg-gray-200 dark:hover:bg-gray-700 hover:rounded-md hover:bg-opacity-20 hover:text-blue-500"
       >
-        <h2 className="text-xl cursor-pointer hover:text-blue-500 inline-block duration-300 transition-all">
+        <h2 className="text-xl cursor-pointer inline-block duration-300 transition-all ">
           {title}
         </h2>
 
