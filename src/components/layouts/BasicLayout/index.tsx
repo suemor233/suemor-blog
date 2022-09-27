@@ -1,5 +1,6 @@
 import { LazyMotion, domMax } from 'framer-motion'
 import { ThemeProvider } from 'next-themes'
+import dynamic from 'next/dynamic'
 import type { FC, PropsWithChildren } from 'react'
 import { useEffect } from 'react'
 
@@ -9,9 +10,11 @@ import { printToConsole } from '~/utils/console'
 
 import Footer from './Footer'
 import Header from './Header'
-import PageProgressBar from './PageProgressBar'
-import ToolBar from './ToolBar/ToolBar'
 
+const PageProgressBar = dynamic(
+  () => import('~/components/layouts/BasicLayout/PageProgressBar'),
+  { ssr: false },
+)
 const BasicLayout: FC<PropsWithChildren> = ({ children }) => {
   const { check: checkBrowser } = useCheckOldBrowser()
   useEffect(() => {
@@ -25,14 +28,13 @@ const BasicLayout: FC<PropsWithChildren> = ({ children }) => {
 
   return (
     <ThemeProvider attribute="class">
-      <PageProgressBar />
       <LazyMotion strict features={domMax}>
-        <div className="theme-container flex flex-col min-h-screen">
+        <PageProgressBar />
+        <main className="theme-container flex flex-col min-h-screen">
           <Header />
           {children}
           <Footer />
-        </div>
-        <ToolBar />
+        </main>
       </LazyMotion>
       <div className={'bg-pic'} />
     </ThemeProvider>

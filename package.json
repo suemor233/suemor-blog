@@ -16,6 +16,7 @@
   "dependencies": {
     "clsx": "^1.2.1",
     "cross-env": "^7.0.3",
+    "dayjs": "^1.11.5",
     "framer-motion": "^7.3.5",
     "lodash-es": "^4.17.21",
     "mobx": "^6.6.2",

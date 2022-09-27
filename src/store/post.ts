@@ -1,5 +1,5 @@
 import { makeAutoObservable } from 'mobx'
-import { PostsPaginateType } from '~/types/post'
+import type { PostsPaginateType } from '~/types/post'
 
 
 

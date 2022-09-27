@@ -1,10 +1,17 @@
-import { m } from 'framer-motion'
+import { Variants, m } from 'framer-motion'
 import { observer } from 'mobx-react-lite'
 import NextLink from 'next/link'
 import type { IconType } from 'react-icons'
-import { IoAlbums, IoHome, IoPeopleSharp, IoPersonSharp } from 'react-icons/io5'
+import {
+  IoAlbums,
+  IoCloudyNightOutline,
+  IoHome,
+  IoPartlySunnyOutline,
+  IoPeopleSharp,
+  IoPersonSharp,
+} from 'react-icons/io5'
 
-import { Avatar } from '~/components/universal/Avatar'
+import { useColorMode } from '~/hooks/use-color-mode'
 
 import { useStore } from '../../../../store/index'
 
@@ -37,31 +44,46 @@ export const navigation: NavItem[] = [
   },
 ]
 
+const buttonAnimation: Variants = {
+  whileHover: {
+    scale: 1.1,
+    transition: {
+      type: 'spring',
+      stiffness: 300,
+      damping: 17,
+    },
+  },
+  whileTap: {
+    scale: 0.8,
+  },
+}
+
 const Header = () => {
-  const { appStore,userStore } = useStore()
+  const { appStore } = useStore()
+  const { isDark, toggleColorMode } = useColorMode()
   return (
     <header className="flex p-3 justify-between">
-      <NextLink
-        href={'/'}
-        className="flex items-center transition-all duration-500 p-2 cursor-pointer rounded-md"
+      <m.div
+        className="cursor-pointer"
+        whileHover="whileHover"
+        whileTap="whileTap"
+        variants={buttonAnimation}
+        onClick={() => toggleColorMode()}
       >
-        <Avatar
-          shadow={false}
-          imageUrl={userStore.master?.avatar || ''}
-          useRandomColor={false}
-          size={35}
-          lazy={false}
-        />
-        <span className="ml-3 text-blue-500 text-lg select-none phone:hidden">
-          {userStore.master?.username}
-        </span>
-
-      </NextLink>
+        {isDark ? (
+          <IoCloudyNightOutline size={20} />
+        ) : (
+          <IoPartlySunnyOutline size={20} />
+        )}
+      </m.div>
       <nav className="flex items-center flex-row gap-3 phone:gap-0">
         {navigation.map(({ path, Icon, label }, index) => (
           <m.section
             key={path}
-            whileHover={{ scale: 1.1, type: 'spring' }}
+            whileHover="whileHover"
+            whileTap="whileTap"
+            animate="animate"
+            variants={buttonAnimation}
           >
             <NextLink
               href={path}

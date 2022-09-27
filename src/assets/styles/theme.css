@@ -1,5 +1,5 @@
 :root {
-  --blue:#74b9ff;
+  --blue:#96c5f5;
   --light-bg: #fff;
   --gray: #dfe6e9;
 }
@@ -49,7 +49,7 @@ body::-webkit-scrollbar {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gray);
+  background: var(--blue);
 }
 
 ::-webkit-scrollbar-thumb:hover {

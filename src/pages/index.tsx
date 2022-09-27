@@ -1,19 +1,17 @@
 import { observer } from 'mobx-react-lite'
 import type { NextPage } from 'next'
-import { useEffect } from 'react'
 
 import { postPaginate } from '~/api/modules/posts'
 import ArticleList from '~/components/in-page/Home/artcile-list'
 import UserInfo from '~/components/in-page/Home/user-info'
 import { PostsPaginateType } from '~/types/post'
 
-
-const Home: NextPage<PostsPaginateType> = (props) => {
+const Home: NextPage<PostsPaginateType> = (posts) => {
   return (
     <div className="flex flex-col items-center">
       <div className="w-[45rem] w900:max-w-[45rem] w900:w-auto mt-2 px-5">
         <UserInfo />
-        <ArticleList posts={props}/>
+        <ArticleList posts={posts} />
       </div>
     </div>
   )

@@ -3,8 +3,8 @@ export interface PostsPaginateType extends PaginateType {
 }
 
 export interface PaginateType {
-  pageCurrent: number
-  pageSize: number
+  totalCount: number
+  totalPages: number
 }
 
 export interface postType {
