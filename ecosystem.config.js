@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'suemor-blog',
-      script: 'npx next start -p 3344',
+      script: 'npx next start -p 3759',
       instances: 1,
       autorestart: true,
       watch: false,
