@@ -9,11 +9,9 @@ import type { postType } from '~/types/post'
 const PostView: NextPage<postType> = (props) => {
   const router = useRouter()
   return (
-    <>
-    <ArticleLayout post={props}>
-      <Markdown />
-    </ArticleLayout>
-    </>
+      <ArticleLayout post={props}>
+        <Markdown />
+      </ArticleLayout>
   )
 }
 

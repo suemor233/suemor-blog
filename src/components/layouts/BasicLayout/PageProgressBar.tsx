@@ -11,7 +11,7 @@ function PageProgressBar() {
 
   return (
     <m.div
-      className='pointer-events-none fixed inset-0 z-top h-[3px] origin-left bg-blue-300 bg-opacity-80'
+      className='pointer-events-none fixed inset-0 z-top h-[3px] origin-left bg-blue-300 bg-opacity-80 z-50'
       style={{ scaleX }}
     />
   )

@@ -15,6 +15,7 @@ specifiers:
   eslint-config-next: 12.3.0
   framer-motion: ^7.3.5
   lodash-es: ^4.17.21
+  markdown-navbar: ^1.4.3
   mobx: ^6.6.2
   mobx-react-lite: ^3.4.0
   next: 12.3.0
@@ -31,6 +32,7 @@ specifiers:
   react-icons: ^4.4.0
   react-markdown: ^8.0.3
   react-message-popup: 1.0.0-alpha.4
+  react-no-ssr: ^1.1.0
   react-syntax-highlighter: ^15.5.0
   rehype-raw: ^6.1.1
   remark-gfm: ^3.0.1
@@ -45,6 +47,7 @@ dependencies:
   dayjs: 1.11.5
   framer-motion: 7.3.5_biqbaboplfbrettd7655fr4n2y
   lodash-es: 4.17.21
+  markdown-navbar: 1.4.3
   mobx: 6.6.2
   mobx-react-lite: 3.4.0_qrr2ojv4n7h7ey2xj7njerqqr4
   next: 12.3.0_biqbaboplfbrettd7655fr4n2y
@@ -56,6 +59,7 @@ dependencies:
   react-icons: 4.4.0_react@18.2.0
   react-markdown: 8.0.3_fn6mmk7tilns4p7ajkklhuudvi
   react-message-popup: 1.0.0-alpha.4_biqbaboplfbrettd7655fr4n2y
+  react-no-ssr: 1.1.0_react@18.2.0
   react-syntax-highlighter: 15.5.0_react@18.2.0
   rehype-raw: 6.1.1
   remark-gfm: 3.0.1
@@ -1215,6 +1219,13 @@ packages:
     resolution: {integrity: sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA==}
     dev: true
 
+  /babel-runtime/6.26.0:
+    resolution: {integrity: sha512-ITKNuq2wKlW1fJg9sSW52eepoYgZBggvOAHC0u/CYu/qxQ9EVzThCgR69BnSXLHjy2f7SY5zaQ4yt7H9ZVxY2g==}
+    dependencies:
+      core-js: 2.6.12
+      regenerator-runtime: 0.11.1
+    dev: false
+
   /bail/2.0.2:
     resolution: {integrity: sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw==}
     dev: false
@@ -1365,6 +1376,17 @@ packages:
     resolution: {integrity: sha512-7Fr74bliUDdeJCBMxkkIuQ4xfxn/SwrVg+HkJUAoNEXVqYLv55l6Af0dJ5Lq2YBUW9yKqSkLXaS5SYPK6MGa/A==}
     requiresBuild: true
     dev: true
+
+  /core-js/2.6.12:
+    resolution: {integrity: sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==}
+    deprecated: core-js@<3.23.3 is no longer maintained and not recommended for usage due to the number of issues. Because of the V8 engine whims, feature detection in old core-js versions could cause a slowdown up to 100x even if nothing is polyfilled. Some versions have web compatibility issues. Please, upgrade your dependencies to the actual version of core-js.
+    requiresBuild: true
+    dev: false
+
+  /core-js/3.25.5:
+    resolution: {integrity: sha512-nbm6eZSjm+ZuBQxCUPQKQCoUEfFOXjUZ8dTTyikyKaWrTYmAVbykQfwsKE5dBK88u3QCkCrzsx/PPlKfhsvgpw==}
+    requiresBuild: true
+    dev: false
 
   /cosmiconfig/7.0.1:
     resolution: {integrity: sha512-a1YWNUV2HwGimB7dU2s1wUMurNKjpx60HxBB6xUM8Re+2s1g1IIfJvFR0/iCF+XHdE0GMTKTuLR32UQff4TEyQ==}
@@ -2723,6 +2745,14 @@ packages:
       sourcemap-codec: 1.4.8
     dev: true
 
+  /markdown-navbar/1.4.3:
+    resolution: {integrity: sha512-esZQ9fHbjnOq/YnmKRrHTRhIO5+UmU3g5BS2tly7RwWrWCjOWv0Nq2A8r1GF9IBZKvrwM/rzaMgjjsQlkbh0tA==}
+    dependencies:
+      core-js: 3.25.5
+      prop-types: 15.8.1
+      react: 16.14.0
+    dev: false
+
   /markdown-table/3.0.2:
     resolution: {integrity: sha512-y8j3a5/DkJCmS5x4dMCQL+OR0+2EAq3DOtio1COSHsmW2BGXnNCK3v12hJt1LrUz5iZH5g0LmuYOjDdI+czghA==}
     dev: false
@@ -3954,6 +3984,15 @@ packages:
       react-dom: 18.2.0_react@18.2.0
     dev: false
 
+  /react-no-ssr/1.1.0_react@18.2.0:
+    resolution: {integrity: sha512-3td8iPIEFKWXOJ3Ar5xURvZAsv/aIlngJLBH6fP5QC3WhsfuO2pn7WQR0ZlkTE0puWCL0RDEvXtOfAg4qMp+xA==}
+    peerDependencies:
+      react: ^0.14.0 || ^15.0.0
+    dependencies:
+      babel-runtime: 6.26.0
+      react: 18.2.0
+    dev: false
+
   /react-syntax-highlighter/15.5.0_react@18.2.0:
     resolution: {integrity: sha512-+zq2myprEnQmH5yw6Gqc8lD55QHnpKaU8TOcFeC/Lg/MQSs8UknEA0JC4nTZGFAXC2J2Hyj/ijJ7NlabyPi2gg==}
     peerDependencies:
@@ -3965,6 +4004,15 @@ packages:
       prismjs: 1.29.0
       react: 18.2.0
       refractor: 3.6.0
+    dev: false
+
+  /react/16.14.0:
+    resolution: {integrity: sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      prop-types: 15.8.1
     dev: false
 
   /react/18.2.0:
@@ -3986,6 +4034,10 @@ packages:
       hastscript: 6.0.0
       parse-entities: 2.0.0
       prismjs: 1.27.0
+    dev: false
+
+  /regenerator-runtime/0.11.1:
+    resolution: {integrity: sha512-MguG95oij0fC3QV3URf4V2SDYGJhJnJGqvIIgdECeODCT98wSWDAJ94SSuVpYQUoTcGUIL6L4yNB7j1DFFHSBg==}
     dev: false
 
   /regenerator-runtime/0.13.9:

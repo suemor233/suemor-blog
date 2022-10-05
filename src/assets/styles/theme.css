@@ -73,4 +73,7 @@ a {
   .theme-container {
     @apply bg-[#FAFAFA] bg-opacity-30 text-black transition-colors dark:bg-[#121212] dark:bg-opacity-70 dark:text-[#dee1e7];
   }
+  .dark-bg {
+    @apply dark:bg-[#282828]
+  }
 }

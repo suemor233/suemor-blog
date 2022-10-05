@@ -1,34 +1,58 @@
 import { m } from 'framer-motion'
-import type { FC, PropsWithChildren} from 'react';
+import MarkdownNavbar from 'markdown-navbar'
+import { FC, PropsWithChildren, useEffect } from 'react'
 import { useMemo } from 'react'
 import { IoTimeSharp } from 'react-icons/io5'
-import { backdropMotion } from '~/components/in-page/Home/artcile-list'
 
+import { backdropMotion } from '~/components/in-page/Home/artcile-list'
 import { Avatar } from '~/components/universal/Avatar'
 import { useStore } from '~/store'
 import type { postType } from '~/types/post'
 import { parseDate } from '~/utils/time'
-
 import { ArticleLayoutContextProvider, useArticleLayoutProps } from './hooks'
+import 'markdown-navbar/dist/navbar.css'
 
 interface IProps extends PropsWithChildren {
   post: postType
 }
 
 const ArticleLayout: FC<IProps> = ({ children, post }) => {
+  const NAVBAR_MIDDLE = 250
+
+  const onScroll = () => {
+    const activeItem = document.querySelector('.active') as any
+    if (activeItem) {
+      const offsetTop = activeItem.offsetTop
+      const navbar = document.querySelector('.markdown-navigation ') as Element
+      if (offsetTop > NAVBAR_MIDDLE) {
+        navbar.scrollTop = offsetTop - NAVBAR_MIDDLE
+      } else {
+        navbar.scrollTop = 0
+      }
+    }
+  }
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [])
   return (
-    <ArticleLayoutContextProvider value={post}>
-      <m.main
-        className="max-w-[48rem] mx-auto my-0 border-gray-200 border-1 rounded-2xl p-8 dark:border-gray-600"
-        variants={backdropMotion}
-        initial="exit"
-        animate="enter"
-        exit="exit"
-      >
-        <ArticleTitle />
-        <div className="mt-5">{children}</div>
-      </m.main>
-    </ArticleLayoutContextProvider>
+      <ArticleLayoutContextProvider value={post}>
+        <m.main
+          className="max-w-[48rem] mx-auto my-0 border-gray-200 border-1 rounded-2xl p-8 dark:border-gray-600 bg-white dark-bg relative"
+          variants={backdropMotion}
+          initial="exit"
+          animate="enter"
+          exit="exit"
+        >
+          <ArticleTitle />
+          <div className="mt-5">{children}</div>
+          <div className="fixed top-[40%] ml-[-20rem] w-[15rem] whitespace-nowrap ">
+            <MarkdownNavbar source={post.content} declarative={true} ordered={false}/>
+          </div>
+        </m.main>
+      </ArticleLayoutContextProvider>
   )
 }
 
