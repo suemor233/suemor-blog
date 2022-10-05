@@ -1,6 +1,6 @@
 import clsx from 'clsx'
-import type { FC, HTMLProps, PropsWithChildren } from 'react'
-import { useMemo, useState } from 'react'
+import type { FC, HTMLProps, PropsWithChildren } from 'react';
+import { memo , useMemo, useState } from 'react'
 import {
   MdOutlineArrowBackIosNew,
   MdOutlineArrowForwardIos,
@@ -126,4 +126,4 @@ const Button: FC<
   )
 }
 
-export default Pagination
+export default memo(Pagination)

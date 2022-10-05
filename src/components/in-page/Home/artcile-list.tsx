@@ -1,19 +1,23 @@
-import { Variants } from 'framer-motion'
 import { m } from 'framer-motion'
+import type { Variants } from 'framer-motion'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
-import { FC, useEffect, useRef, useState } from 'react'
+import type { FC} from 'react';
+import { useMemo , useEffect, useState } from 'react'
 
 import { postPaginate } from '~/api/modules/posts'
-import Pagination from '~/components/universal/Pagination'
 import type { PostsPaginateType, postType } from '~/types/post'
 import { parseDate } from '~/utils/time'
+import Pagination from '~/components/universal/Pagination'
 
 const ArticleList: FC<Record<'posts', PostsPaginateType>> = ({ posts }) => {
   const [postList, setPostList] = useState<PostsPaginateType>(posts)
   const router = useRouter()
   const updatePostList = async (page: number) => {
-    const postListData = await postPaginate({ pageCurrent: page, pageSize: 10 })
+    const postListData = await postPaginate({
+      pageCurrent: page,
+      pageSize: 10,
+    })
     postListData && setPostList(postListData)
     window.scrollTo({
       top: 0,
@@ -22,8 +26,7 @@ const ArticleList: FC<Record<'posts', PostsPaginateType>> = ({ posts }) => {
   }
   useEffect(() => {
     if (router.query.page) {
-      console.log('start');
-      updatePostList(Number(router.query.page) )
+      updatePostList(Number(router.query.page))
     }
   }, [router.query])
   if (postList.postList.length <= 0) {
@@ -35,19 +38,24 @@ const ArticleList: FC<Record<'posts', PostsPaginateType>> = ({ posts }) => {
         <Item key={item._id} post={item} />
       ))}
       <div className="flex justify-center mt-5">
-        {postList.totalPages > 1 && (
-          <Pagination
-            total={postList.totalPages}
-            initialPage={Number(router.query.page) || 1}
-            onChange={(page) => router.push(`/?page=${page}`)}
-          />
-        )}
+        {postList.totalPages > 1 &&
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          useMemo(
+            () => (
+              <Pagination
+                total={postList.totalPages}
+                initialPage={Number(router.query.page) || 1}
+                onChange={(page) => router.push(`/?page=${page}`)}
+              />
+            ),
+            [postList.totalPages, router],
+          )}
       </div>
     </m.section>
   )
 }
 
-const backdropMotion: Variants = {
+export const backdropMotion: Variants = {
   exit: {
     opacity: 0,
     transition: {
@@ -82,12 +90,11 @@ const Item: FC<Record<'post', postType>> = ({ post }) => {
         <h2 className="text-xl cursor-pointer inline-block duration-300 transition-all ">
           {title}
         </h2>
-
         <p className="text-gray-700 mt-2 dark:text-gray-400 line-clamp-3">
           {content}
         </p>
         <div className="mt-2 flex gap-2 text-blue-500">
-          <time>{parseDate(created, 'YYYY-MM-DD dddd')}</time>
+          <time>{parseDate(created, 'YYYY-MM-DD')}</time>
           <span>{category.name}</span>
           {tags.map((item) => (
             <span key={item}>{item}</span>

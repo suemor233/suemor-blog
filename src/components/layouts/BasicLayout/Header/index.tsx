@@ -1,4 +1,5 @@
-import { Variants, m } from 'framer-motion'
+import type { Variants} from 'framer-motion';
+import { m } from 'framer-motion'
 import { observer } from 'mobx-react-lite'
 import NextLink from 'next/link'
 import type { IconType } from 'react-icons'
