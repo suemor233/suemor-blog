@@ -1,5 +1,4 @@
 import dynamic from 'next/dynamic'
-import { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'

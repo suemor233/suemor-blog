@@ -1,0 +1,65 @@
+.markdown-navigation {
+  --nav-blue:#F3F4F6;
+  --nav-text-blue:#3B82F6;
+  --nav-bg-blue:#F3F4F6;
+}
+
+.dark .markdown-navigation {
+  --nav-blue:#F3F4F6;
+  --nav-text-blue:#3B82F6;
+  --nav-bg-blue:rgb(59, 130, 246,0.3);
+}
+.markdown-navigation .title-anchor {
+  display: block;
+  color: #bbb;
+  transition: all 0.2s;
+  margin: 0.8em 0;
+  font-weight: lighter;
+  line-height: 2em;
+  padding: .3em;
+  cursor: pointer;
+  color: var(--nav-text-blue);
+}
+
+.markdown-navigation .title-anchor:hover,
+.markdown-navigation .title-anchor.active {
+  background-color: var(--nav-bg-blue);
+  text-decoration: inherit;
+}
+
+.markdown-navigation .title-anchor small {
+  margin: 0 0.8em;
+}
+
+.markdown-navigation .title-level1 {
+  font-size: 1.2em;
+  padding-left: 1em;
+  font-weight: normal;
+}
+
+.markdown-navigation .title-level2 {
+  font-size: 1em;
+  padding-left: 1em;
+  font-weight: normal;
+}
+
+.markdown-navigation .title-level3 {
+  font-size: 0.8em;
+  padding-left: 3em;
+  font-weight: normal;
+}
+
+.markdown-navigation .title-level4 {
+  font-size: 0.72em;
+  padding-left: 5em;
+}
+
+.markdown-navigation .title-level5 {
+  font-size: 0.72em;
+  padding-left: 7em;
+}
+
+.markdown-navigation .title-level6 {
+  font-size: 0.72em;
+  padding-left: 9em;
+}

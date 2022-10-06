@@ -30,7 +30,7 @@ const BasicLayout: FC<PropsWithChildren> = ({ children }) => {
     <ThemeProvider attribute="class">
       <LazyMotion strict features={domMax}>
         <PageProgressBar />
-        <main className="theme-container flex flex-col
+        <main className="theme-container flex flex-col min-h-screen
         ">
           <Header />
           {children}

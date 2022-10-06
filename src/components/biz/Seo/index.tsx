@@ -23,6 +23,7 @@ export const SEO: FC<SEOProps> = observer((props) => {
     <NextSeo
       {...{
         title,
+        titleTemplate:title,
         openGraph: merge(
           {
             profile: {

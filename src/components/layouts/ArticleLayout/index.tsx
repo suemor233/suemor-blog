@@ -9,8 +9,8 @@ import { Avatar } from '~/components/universal/Avatar'
 import { useStore } from '~/store'
 import type { postType } from '~/types/post'
 import { parseDate } from '~/utils/time'
+
 import { ArticleLayoutContextProvider, useArticleLayoutProps } from './hooks'
-import 'markdown-navbar/dist/navbar.css'
 
 interface IProps extends PropsWithChildren {
   post: postType
@@ -20,7 +20,7 @@ const ArticleLayout: FC<IProps> = ({ children, post }) => {
   const NAVBAR_MIDDLE = 250
 
   const onScroll = () => {
-    const activeItem = document.querySelector('.active') as any
+    const activeItem = document.querySelector('.active') as HTMLElement
     if (activeItem) {
       const offsetTop = activeItem.offsetTop
       const navbar = document.querySelector('.markdown-navigation ') as Element
@@ -38,9 +38,10 @@ const ArticleLayout: FC<IProps> = ({ children, post }) => {
     }
   }, [])
   return (
-      <ArticleLayoutContextProvider value={post}>
+    <ArticleLayoutContextProvider value={post}>
+      <div>
         <m.main
-          className="max-w-[48rem] mx-auto my-0 border-gray-200 border-1 rounded-2xl p-8 dark:border-gray-600 bg-white dark-bg relative"
+          className="max-w-[48rem] mx-auto my-0 border-gray-200 phone:border-none border-1 rounded-2xl p-8 dark:border-gray-600 bg-white dark-bg relative"
           variants={backdropMotion}
           initial="exit"
           animate="enter"
@@ -48,11 +49,16 @@ const ArticleLayout: FC<IProps> = ({ children, post }) => {
         >
           <ArticleTitle />
           <div className="mt-5">{children}</div>
-          <div className="fixed top-[40%] ml-[-20rem] w-[15rem] whitespace-nowrap ">
-            <MarkdownNavbar source={post.content} declarative={true} ordered={false}/>
+          <div className="fixed top-[40%] ml-[-20rem] w-[15rem] whitespace-nowrap tablet:hidden">
+            <MarkdownNavbar
+              source={post.content}
+              declarative={true}
+              ordered={false}
+            />
           </div>
         </m.main>
-      </ArticleLayoutContextProvider>
+      </div>
+    </ArticleLayoutContextProvider>
   )
 }
 
@@ -69,7 +75,7 @@ const ArticleTitle = () => {
         lazy={false}
       />
 
-      <h1 className="text-4xl font-ui ">{title}</h1>
+      <h1 className="text-4xl font-ui phone:text-2xl">{title}</h1>
       <div className="flex text-lg text-gray-500 item-center gap-5">
         <time className="">{parseDate(created, 'YYYY-MM-DD dddd')}</time>
         <div className="flex items-center">
