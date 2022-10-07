@@ -1,3 +1,4 @@
+import message from 'react-message-popup'
 import { extend } from 'umi-request'
 
 import { API_URL } from '~/constants/env'
@@ -9,12 +10,8 @@ import { isClientSide } from '~/utils/env'
 const client = extend({
   prefix: API_URL,
   timeout: 5000,
-  headers: {
-    'Content-Type': 'multipart/form-data',
-  },
-  errorHandler: () => undefined,
+  errorHandler: undefined
 })
-
 // request拦截器, 改变url 或 options
 client.interceptors.request.use(
   (url: string, options: any) => {
@@ -29,6 +26,11 @@ client.interceptors.request.use(
 client.interceptors.response.use(async (response: any) => {
   const res = await response.clone().json()
   if (res.ok === 0 && isClientSide()) {
+    if (Array.isArray(res.message)) {
+      message.error(res.message[0])
+    } else {
+      message.error(res.message)
+    }
     return undefined
   }
 

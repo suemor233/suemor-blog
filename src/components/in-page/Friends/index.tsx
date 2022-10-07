@@ -1,9 +1,11 @@
 import { AnimatePresence, Variants, m } from 'framer-motion'
-import { FC } from 'react'
+import { FC, useMemo } from 'react'
 
 import { Avatar } from '~/components/universal/Avatar'
 
 import { FriendsType } from '../../../api/modules/friends'
+import InputArea from '../../universal/Input/input-area'
+import { useStore } from '../../../store/index';
 
 const containerVariants: Variants = {
   exit: {
@@ -31,40 +33,64 @@ const containerVariants: Variants = {
 }
 
 const Friends: FC<Record<'friends', FriendsType[]>> = ({ friends }) => {
+  const {userStore} = useStore()
   return (
-    <div className="grid grid-cols-2 phone:grid-cols-1 gap-5">
-      <AnimatePresence initial mode="wait">
-        {friends.length ? (
-          friends.map((item) => (
-            <m.a
-              key={item._id}
-              variants={containerVariants}
-              initial="exit"
-              exit="exit"
-              whileInView={'enter'}
-              whileHover={'hover'}
-              href={item.url}
-              target="_blank"
-              className="flex hover:bg-blue-100 dark:hover:bg-gray-700 rounded-xl transition-colors p-2 cursor-pointer hover:bg-opacity-80  dark:hover:bg-opacity-100"
-            >
-              <div>
-                <Avatar imageUrl={item.avatar} lazy={false} />
-              </div>
-              <div className="ml-2 flex flex-col justify-center">
-                <p className="text-xl text-blue-500">{item.name}</p>
-                <p className="text-sm text-deepgray line-clamp-2 break-all">
-                  {item.description}
-                </p>
-              </div>
-            </m.a>
-          ))
-        ) : (
-          <h1 className="mx-auto my-0 text-xl font-ui text-center">
-            呜呜呜，博主好像还没有朋友诶 🙃
-          </h1>
-        )}
-      </AnimatePresence>
-    </div>
+    <m.div
+      className="grid grid-cols-2 phone:grid-cols-1 gap-5 p-2"
+      variants={containerVariants}
+      initial="exit"
+      exit="exit"
+      whileInView={'enter'}
+    >
+      {friends.length ? (
+        friends.map((item) => (
+          <m.a
+            key={item._id}
+            variants={containerVariants}
+            whileHover={'hover'}
+            href={item.url}
+            target="_blank"
+            className="flex hover:bg-blue-100 dark:hover:bg-gray-700 rounded-xl transition-colors  cursor-pointer hover:bg-opacity-80  dark:hover:bg-opacity-100"
+          >
+            <div>
+              <Avatar imageUrl={item.avatar} lazy={false} />
+            </div>
+            <div className="ml-2 flex flex-col justify-center">
+              <p className="text-xl text-blue-500">{item.name}</p>
+              <p className="text-sm text-deepgray line-clamp-2 break-all">
+                {item.description}
+              </p>
+            </div>
+          </m.a>
+        ))
+      ) : (
+        <h1 className="mx-auto my-0 text-xl font-ui text-center">
+          呜呜呜，博主好像还没有朋友诶 🙃
+        </h1>
+      )}
+      <div className='col-span-2 phone:col-span-1 flex flex-col gap-4 mt-10'>
+        <h1 className='font-ui text-xl border-l-blue-500 border-l-3 pl-2'>友链申请</h1>
+        <InputArea />
+      </div>
+
+      <div className='col-span-2 phone:col-span-1 flex flex-col gap-4 mt-10'>
+        <h1 className='font-ui text-xl border-l-blue-500 border-l-3 pl-2'>本站信息</h1>
+        <div className='flex flex-col gap-2'>
+          <div className='flex'>
+            <p className='  font-semibold font-ui'>站点标题:&nbsp;</p>
+            <p >{userStore.username}的博客</p>
+          </div>
+          <div className='flex'>
+            <p className='font-semibold font-ui'>站点描述:&nbsp;</p>
+            <p >{userStore.master?.introduce}</p>
+          </div>
+          <div className='flex'>
+            <p className=' font-semibold font-ui'>博主头像:&nbsp;</p>
+            <a href={userStore.master?.avatar} target='_blank' className='text-blue-600'>点击下载</a>
+          </div>
+        </div>
+      </div>
+    </m.div>
   )
 }
 
