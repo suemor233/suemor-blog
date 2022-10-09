@@ -32,7 +32,24 @@ const useFormData = () => {
 const InputArea = () => {
   const [state, dispatch] = useFormData()
   const handleSubmit = useCallback(() => {
-    console.log('start');
+    if (!state.name) {
+      message.error('站点标题不能为空')
+      return
+    }
+
+    if (!state.url) {
+      message.error('网站不能为空')
+      return
+    }
+    if (!state.avatar) {
+      message.error('头像不能为空')
+      return
+    }
+
+    if (!state.description) {
+      message.error('描述不能为空')
+      return
+    }
     auditLink(state).then((res) => {
       if (res) {
         message.success('提交成功，请等待博主批准')
@@ -55,7 +72,7 @@ const InputArea = () => {
           />
           <input
             type="url"
-            placeholder="网址 *"
+            placeholder="网站 * https://"
             className="w-full"
             value={state.url}
             onChange={(e) =>
@@ -64,7 +81,7 @@ const InputArea = () => {
           />
           <input
             type="url"
-            placeholder="头像链接 *"
+            placeholder="头像链接 * https://"
             className="w-full"
             value={state.avatar}
             onChange={(e) =>
@@ -74,7 +91,7 @@ const InputArea = () => {
         </div>
         <textarea
           placeholder="描述 *"
-          className="w-full break-words min-h-[7rem]"
+          className="w-full break-words min-h-[7rem] mt-2"
           value={state.description}
           onChange={(e) =>
             dispatch({ type: 'set', data: { description: e.target.value } })

@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from 'react'
+import type { FC, PropsWithChildren } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import {
   oneDark,

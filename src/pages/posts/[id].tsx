@@ -1,6 +1,4 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import { useRouter } from 'next/router'
 
 import { fetchPostById } from '~/api/modules/posts'
 import { Seo } from '~/components/biz/Seo'
@@ -8,24 +6,24 @@ import ArticleLayout from '~/components/layouts/ArticleLayout'
 import Markdown from '~/components/universal/Markdown'
 import type { postType } from '~/types/post'
 
-const PostView: NextPage<postType> = (props) => {
-  const router = useRouter()
-  console.log(props.title);
+const PostView: NextPage<postType> = (Post) => {
+  const {content,title,created,category,tags} = Post;
+
   return (
     <>
       <Seo
-        title={props.title}
-        description={props.category.name}
+        title={title}
+        description={category.name}
         openGraph={{
           type: 'article',
           article: {
-            publishedTime: props.created,
-            section: props.category.name,
-            tags: props.tags ?? [],
+            publishedTime: created,
+            section:category.name,
+            tags: tags ?? [],
           },
         }}
       />
-      <ArticleLayout post={props}>
+      <ArticleLayout content={content} title={title} created={created}>
         <Markdown />
       </ArticleLayout>
     </>

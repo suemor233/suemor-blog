@@ -1,7 +1,8 @@
-import type { Variants} from 'framer-motion';
 import { m } from 'framer-motion'
 import { observer } from 'mobx-react-lite'
 import NextLink from 'next/link'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 import type { IconType } from 'react-icons'
 import {
   IoAlbums,
@@ -15,6 +16,11 @@ import {
 import { useColorMode } from '~/hooks/use-color-mode'
 
 import { useStore } from '../../../../store/index'
+import {
+  anchorMotion,
+  buttonAnimation,
+  hightlightMotion
+} from './motion'
 
 type NavItem = {
   label: string
@@ -45,22 +51,13 @@ export const navigation: NavItem[] = [
   },
 ]
 
-const buttonAnimation: Variants = {
-  whileHover: {
-    scale: 1.1,
-    transition: {
-      type: 'spring',
-      stiffness: 300,
-      damping: 17,
-    },
-  },
-  whileTap: {
-    scale: 0.8,
-  },
-}
-
 const Header = () => {
   const { appStore } = useStore()
+  const router = useRouter()
+  const [currentPath, setCurrentPath] = useState('')
+  useEffect(() => {
+    setCurrentPath(router.pathname)
+  }, [router])
   const { isDark, toggleColorMode } = useColorMode()
   return (
     <header className="flex p-3 justify-between">
@@ -77,24 +74,40 @@ const Header = () => {
           <IoPartlySunnyOutline size={20} />
         )}
       </m.div>
-      <nav className="flex items-center flex-row gap-3 phone:gap-0">
+      <nav
+        className="flex items-center flex-row gap-5 phone:gap-0"
+        onMouseLeave={() => setCurrentPath(router.pathname)}
+      >
         {navigation.map(({ path, Icon, label }, index) => (
           <m.section
             key={path}
-            whileHover="whileHover"
-            whileTap="whileTap"
-            animate="animate"
-            variants={buttonAnimation}
+            initial="init"
+            whileHover="hover"
+            whileTap="tap"
           >
             <NextLink
               href={path}
-              className="text-lg transition-all items-center duration-500 rounded-md text-blue-500 px-3  hover:text-blue-600 flex"
+              className="text-lg transition-all items-center duration-500 rounded-md text-blue-500 px-4 py-2 flex relative"
             >
-              <Icon
-                size={appStore.viewport.mobile ? 23 : 15}
-                className="mr-2"
-              />
-              <span className="phone:hidden">{label}</span>
+              {currentPath === path && (
+                <m.span
+                  style={{ translateY: 0 }}
+                  className="absolute inset-0 h-full w-full rounded-lg bg-blue-100 -z-1"
+                  variants={hightlightMotion}
+                  transition={{ type: 'spring', mass: 0.2 }}
+                  layoutId="nav-magic"
+                />
+              )}
+              <m.i variants={anchorMotion}>
+                <Icon
+                  size={appStore.viewport.mobile ? 26 : 15}
+                  className="mr-2"
+                />
+              </m.i>
+
+              <m.span variants={anchorMotion} className="phone:hidden text-xl">
+                {label}
+              </m.span>
             </NextLink>
           </m.section>
         ))}

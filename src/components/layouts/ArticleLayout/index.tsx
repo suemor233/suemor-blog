@@ -1,22 +1,40 @@
-import { m } from 'framer-motion'
+import { m, Variants } from 'framer-motion'
 import MarkdownNavbar from 'markdown-navbar'
-import { FC, PropsWithChildren, useEffect } from 'react'
-import { useMemo } from 'react'
+import type { FC, PropsWithChildren} from 'react';
+import { useEffect , useMemo } from 'react'
 import { IoTimeSharp } from 'react-icons/io5'
 
 import { backdropMotion } from '~/components/in-page/Home/artcile-list'
 import { Avatar } from '~/components/universal/Avatar'
 import { useStore } from '~/store'
-import type { postType } from '~/types/post'
 import { parseDate } from '~/utils/time'
 
 import { ArticleLayoutContextProvider, useArticleLayoutProps } from './hooks'
 
-interface IProps extends PropsWithChildren {
-  post: postType
+
+export interface ArticleLayoutType   {
+  title: string
+  content:string
+  created:string
 }
 
-const ArticleLayout: FC<IProps> = ({ children, post }) => {
+ const ArticleMotion: Variants = {
+  exit: {
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+    },
+  },
+  enter: {
+    opacity: 1,
+    transition: {
+      duration: 0.3
+    },
+  }
+}
+
+// FIXME type 有问题
+const ArticleLayout: FC<ArticleLayoutType & PropsWithChildren> = ({ children, title,content,created }) => {
   const NAVBAR_MIDDLE = 250
 
   const onScroll = () => {
@@ -38,11 +56,11 @@ const ArticleLayout: FC<IProps> = ({ children, post }) => {
     }
   }, [])
   return (
-    <ArticleLayoutContextProvider value={post}>
+    <ArticleLayoutContextProvider value={{title,content,created}}>
       <div>
         <m.main
           className="max-w-[48rem] mx-auto my-0 border-gray-200 phone:border-none border-1 rounded-2xl p-8 dark:border-gray-600 bg-white dark-bg relative"
-          variants={backdropMotion}
+          variants={ArticleMotion}
           initial="exit"
           animate="enter"
           exit="exit"
@@ -51,7 +69,7 @@ const ArticleLayout: FC<IProps> = ({ children, post }) => {
           <div className="mt-5">{children}</div>
           <div className="fixed top-[40%] ml-[-20rem] w-[15rem] whitespace-nowrap tablet:hidden">
             <MarkdownNavbar
-              source={post.content}
+              source={content}
               declarative={true}
               ordered={false}
             />

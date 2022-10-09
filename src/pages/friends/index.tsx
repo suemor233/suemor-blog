@@ -1,6 +1,7 @@
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 
-import { FriendsType, getAllFriends } from '~/api/modules/friends'
+import type { FriendsType} from '~/api/modules/friends';
+import { getAllFriends } from '~/api/modules/friends'
 import { SEO } from '~/components/biz/Seo'
 import Friends from '~/components/in-page/Friends'
 import FriendsLayout from '~/components/layouts/FriendsLayout'
