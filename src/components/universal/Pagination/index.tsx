@@ -107,10 +107,10 @@ const Pagination: FC<PaginationProps> = (props) => {
 
 // TODO: 增加 hover 效果
 const Button: FC<
-  PropsWithChildren & HTMLProps<HTMLAnchorElement> & { canSelect?: boolean }
+  PropsWithChildren & HTMLProps<HTMLButtonElement> & { canSelect?: boolean }
 > = ({ children, onClick, className, canSelect = true }) => {
   return (
-    <a
+    <button
       className={
         canSelect
           ? clsx(
@@ -122,7 +122,7 @@ const Button: FC<
       onClick={onClick}
     >
       {children}
-    </a>
+    </button>
   )
 }
 

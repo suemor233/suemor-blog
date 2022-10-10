@@ -24,7 +24,7 @@ export const Avatar: FC<
   AvatarProps &
     DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>
 > = memo((props) => {
-  const { useRandomColor = true, shadow = true, lazy = true } = props
+  const { useRandomColor = true, shadow = true, lazy = true,alt } = props
   const avatarRef = useRef<HTMLDivElement>(null)
   const randomColor = useMemo(
     () =>
@@ -76,6 +76,7 @@ export const Avatar: FC<
               onLoad={() => setLoaded(true)}
               loading={lazy ? 'lazy' : 'eager'}
               className="aspect-square"
+              alt={alt}
             />
           </div>
         ) : props.text ? (

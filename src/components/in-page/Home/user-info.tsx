@@ -13,6 +13,7 @@ const UserInfo = () => {
           useRandomColor={false}
           size={85}
           lazy={false}
+          alt={'suemor avatar'}
         />
       </div>
       <p className="text-5xl font-ui">{userStore.username}</p>
