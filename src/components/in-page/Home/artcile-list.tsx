@@ -86,15 +86,15 @@ const Item: FC<Record<'post', postType>> = ({ post }) => {
       className="p-4 hover:bg-gray-200 dark:hover:bg-gray-700 hover:rounded-md hover:bg-opacity-20 "
     >
       <NextLink href={`/posts/${_id}`}>
-        <h2 className="text-xl cursor-pointer inline-block duration-300 transition-all hover:text-blue-500">
+        <h2 className="text-2xl cursor-pointer inline-block duration-300 transition-all hover:text-blue-500">
           {title}
         </h2>
       </NextLink>
 
-      <p className="text-gray-700 mt-2 dark:text-gray-400 line-clamp-3">
+      <p className="text-gray-500 mt-2 dark:text-gray-400 line-clamp-3 text-lg ">
         {content}
       </p>
-      <div className="mt-2 flex gap-2 text-blue-500">
+      <div className="mt-2 flex gap-2 text-blue-500 text-xl">
         <time>{parseDate(created, 'YYYY-MM-DD')}</time>
         <span>{category.name}</span>
         {tags.map((item) => (

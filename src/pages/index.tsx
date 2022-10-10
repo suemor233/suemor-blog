@@ -16,7 +16,7 @@ const Home: NextPage<PostsPaginateType> = (posts) => {
         title={`${userStore.username}的博客`}
         description={userStore.master?.introduce}
       />
-      <div className="w-[45rem] w900:max-w-[45rem] w900:w-auto mt-5 px-5">
+      <div className="w-[52rem] w900:max-w-[45rem] w900:w-auto mt-5 px-5">
         <UserInfo />
         <ArticleList posts={posts} />
       </div>
