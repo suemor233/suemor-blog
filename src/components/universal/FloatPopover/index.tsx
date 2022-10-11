@@ -1,8 +1,6 @@
 import clsx from 'clsx'
-import { intercept } from 'mobx'
-import { FC, PropsWithChildren } from 'react'
+import type { FC, PropsWithChildren } from 'react'
 
-import { Content } from '../../layouts/AppLayout'
 
 interface IProps {
   content?: string

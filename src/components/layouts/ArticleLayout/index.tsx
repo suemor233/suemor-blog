@@ -1,4 +1,5 @@
-import { m, Variants } from 'framer-motion'
+import type { Variants } from 'framer-motion';
+import { m } from 'framer-motion'
 import MarkdownNavbar from 'markdown-navbar'
 import type { FC, PropsWithChildren} from 'react';
 import { useEffect , useMemo } from 'react'

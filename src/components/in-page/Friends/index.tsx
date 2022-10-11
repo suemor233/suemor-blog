@@ -1,15 +1,14 @@
 import type { Variants} from 'framer-motion';
 import { m } from 'framer-motion'
-import { FC, memo, useState, useEffect } from 'react';
+import type { FC} from 'react';
+import { memo, useState, useEffect } from 'react';
 
 import { Avatar } from '~/components/universal/Avatar'
 
 import type { FriendsType } from '../../../api/modules/friends'
 import InputArea from '../../universal/Input/input-area'
 import { useStore } from '../../../store/index';
-import { observer } from 'mobx-react-lite';
-import { isServerSide, isClientSide } from '~/utils/env';
-import { FloatPopover } from '~/components/universal/FloatPopover';
+import { isServerSide } from '~/utils/env';
 
 const containerVariants: Variants = {
   exit: {

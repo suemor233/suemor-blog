@@ -1,7 +1,7 @@
 import { m } from 'framer-motion'
 import type { FC, PropsWithChildren } from 'react'
 
-import { AllArchiveType } from '~/api/modules/archive'
+import type { AllArchiveType } from '~/api/modules/archive'
 import { backdropMotion } from '~/components/in-page/Home/artcile-list'
 
 import { ArchiveLayoutContextProvider } from './hooks'
@@ -11,7 +11,7 @@ const ArchiveLayout: FC<
 > = ({ children, archives }) => {
   return (
     <ArchiveLayoutContextProvider value={archives}>
-      <div className="mt-10">
+      <div className="mt-10 ml-25 phone:ml-3">
         <m.main
           variants={backdropMotion}
           initial="exit"
