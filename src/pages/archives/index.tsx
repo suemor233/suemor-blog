@@ -1,13 +1,25 @@
+import { NextPage } from "next"
 import { SEO } from "~/components/biz/Seo"
+import Archives from "~/components/in-page/Archives";
+import ArchiveLayout from "~/components/layouts/ArchiveLayout"
+import { allArchiveRequest, AllArchiveType } from '../../api/modules/archive';
 
-const ArchivesView = () => {
-
+const ArchivesView:NextPage<AllArchiveType> = (archives) => {
+  
   return (
-    <div>
-         <SEO title='归档'/>
-      归档
-    </div>
+    <>
+        <SEO title='归档'/>
+       <ArchiveLayout archives={archives}>
+          <Archives/>
+       </ArchiveLayout>
+    </>
+ 
   )
+}
+
+ArchivesView.getInitialProps = async()=> {
+    const archives = await allArchiveRequest()
+    return archives
 }
 
 export default ArchivesView

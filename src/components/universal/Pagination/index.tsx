@@ -105,7 +105,6 @@ const Pagination: FC<PaginationProps> = (props) => {
   )
 }
 
-// TODO: 增加 hover 效果
 const Button: FC<
   PropsWithChildren & HTMLProps<HTMLButtonElement> & { canSelect?: boolean }
 > = ({ children, onClick, className, canSelect = true }) => {

@@ -3,8 +3,6 @@ import MarkdownNavbar from 'markdown-navbar'
 import type { FC, PropsWithChildren} from 'react';
 import { useEffect , useMemo } from 'react'
 import { IoTimeSharp } from 'react-icons/io5'
-
-import { backdropMotion } from '~/components/in-page/Home/artcile-list'
 import { Avatar } from '~/components/universal/Avatar'
 import { useStore } from '~/store'
 import { parseDate } from '~/utils/time'

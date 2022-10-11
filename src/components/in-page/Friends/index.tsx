@@ -1,6 +1,6 @@
 import type { Variants} from 'framer-motion';
 import { m } from 'framer-motion'
-import type { FC} from 'react';
+import { FC, memo, useState, useEffect } from 'react';
 
 import { Avatar } from '~/components/universal/Avatar'
 
@@ -8,11 +8,12 @@ import type { FriendsType } from '../../../api/modules/friends'
 import InputArea from '../../universal/Input/input-area'
 import { useStore } from '../../../store/index';
 import { observer } from 'mobx-react-lite';
-import { isServerSide } from '~/utils/env';
+import { isServerSide, isClientSide } from '~/utils/env';
+import { FloatPopover } from '~/components/universal/FloatPopover';
 
 const containerVariants: Variants = {
   exit: {
-    y: '100%',
+    y: '20%',
     opacity: 0,
     transition: {
       type: 'tween',
@@ -35,9 +36,12 @@ const containerVariants: Variants = {
   },
 }
 const isMobile =isServerSide() ||  window.innerWidth <= 568
-const Friends: FC<Record<'friends', FriendsType[]>> = ({ friends }) => {
+const Friends: FC<Record<'friends', FriendsType[]>> = memo(({ friends }) => {
   const {userStore} = useStore()
-
+  const [url,setUrl] = useState('')
+  useEffect(()=>{
+    setUrl(window.location.host)
+  },[])
   return (
     <m.div
       className="grid grid-cols-2 phone:grid-cols-1 gap-5 p-2"
@@ -90,12 +94,16 @@ const Friends: FC<Record<'friends', FriendsType[]>> = ({ friends }) => {
           </div>
           <div className='flex'>
             <p className=' font-semibold font-ui'>博主头像:&nbsp;</p>
-            <a href={userStore.master?.avatar} target='_blank' className='text-blue-600'>点击下载</a>
+            <a href={userStore.master?.avatar} target='_blank' className='text-blue-600'>{userStore.master?.avatar}</a>
+          </div>
+          <div className='flex'>
+            <p className=' font-semibold font-ui'>网站地址:&nbsp;</p>
+            <a href={userStore.master?.avatar} target='_blank' className='text-blue-600'>https://{url}</a>
           </div>
         </div>
       </div>
     </m.div>
   )
-}
+})
 
 export default Friends
