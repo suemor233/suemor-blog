@@ -6,7 +6,6 @@ import type { FC, PropsWithChildren } from 'react'
 import { useMemo } from 'react'
 
 import { useArchiveLayoutProps } from '~/components/layouts/ArchiveLayout/hooks'
-import { buttonAnimation } from '~/components/layouts/BasicLayout/Header/motion'
 import { useStore } from '~/store'
 import { isServerSide } from '~/utils/env'
 import { parseDate } from '~/utils/time'

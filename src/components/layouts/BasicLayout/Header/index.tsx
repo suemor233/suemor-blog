@@ -129,8 +129,7 @@ const MobileNav = () => {
   return (
     <header
       className={clsx(
-        'flex flex-col pt-3 fixed w-full z-1 gap-3 bg-[#FDFDFD]',
-        styles.menu,
+        'flex flex-col pt-3 fixed w-full z-1 gap-3 bg-[#FDFDFD]'
       )}
     >
       <div className="flex justify-between px-5">
