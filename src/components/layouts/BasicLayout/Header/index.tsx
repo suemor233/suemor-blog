@@ -84,7 +84,7 @@ const DesktopNav = () => {
     }
   }, [ballIndex])
   return (
-    <m.header className="flex p-3 justify-between shadow-md w-full fixed bg-white z-10 items-center">
+    <m.header className="flex p-3 justify-between shadow-md w-full fixed bg-white z-10 items-center dark:bg-[#121212]">
       <DarkMode />
       <m.nav className="flex items-center flex-row gap-5 phone:gap-0 relative"           ref={groupRef}>
         {navigation.map(({ path, Icon, label }, index) => (
@@ -129,7 +129,7 @@ const MobileNav = () => {
   return (
     <header
       className={clsx(
-        'flex flex-col pt-3 fixed w-full z-1 gap-3 bg-[#FDFDFD]'
+        'flex flex-col pt-3 fixed w-full z-1 gap-3 bg-[#FDFDFD] dark:bg-[#121212]'
       )}
     >
       <div className="flex justify-between px-5">
