@@ -2,8 +2,13 @@ import { m } from 'framer-motion'
 import type { Variants } from 'framer-motion'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
-import type { FC } from 'react'
+import type { FC, PropsWithChildren } from 'react'
 import { useEffect, useMemo, useState } from 'react'
+import {
+  IoBookmarkOutline,
+  IoPricetagsOutline,
+  IoTimeOutline,
+} from 'react-icons/io5'
 
 import { postPaginate } from '~/api/modules/posts'
 import Pagination from '~/components/universal/Pagination'
@@ -94,15 +99,29 @@ const Item: FC<Record<'post', postType>> = ({ post }) => {
       <p className="text-gray-500 mt-2 dark:text-gray-400 line-clamp-3 text-lg ">
         {content}
       </p>
-      <div className="mt-2 flex gap-2 text-blue-500 text-xl">
-        <time>{parseDate(created, 'YYYY-MM-DD')}</time>
-        <span>{category.name}</span>
-        {tags.map((item) => (
-          <span key={item}>{item}</span>
-        ))}
+      <div className="mt-2 flex gap-3 text-blue-500 text-md flex-wrap">
+        <IconWrapper>
+          <IoTimeOutline className="mt-0.5" />
+          <time>{parseDate(created, 'YYYY-MM-DD')}</time>
+        </IconWrapper>
+
+        <IconWrapper>
+          <IoBookmarkOutline className="mt-0.5" />
+          <span>{category.name}</span>
+        </IconWrapper>
+        <IconWrapper>
+          <IoPricetagsOutline className="mt-0.5" />
+          {tags.map((item,index) => (
+            <span key={item}>{index !== 0 && ' | '}{item}</span>
+          ))}
+        </IconWrapper>
       </div>
     </m.article>
   )
+}
+
+const IconWrapper: FC<PropsWithChildren> = ({ children }) => {
+  return <div className="flex items-center gap-1">{children}</div>
 }
 
 export default ArticleList

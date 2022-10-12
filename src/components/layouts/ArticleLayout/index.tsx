@@ -3,7 +3,7 @@ import { m } from 'framer-motion'
 import MarkdownNavbar from 'markdown-navbar'
 import type { FC, PropsWithChildren} from 'react';
 import { useEffect , useMemo } from 'react'
-import { IoTimeSharp } from 'react-icons/io5'
+import { IoTimeOutline } from 'react-icons/io5'
 import { Avatar } from '~/components/universal/Avatar'
 import { useStore } from '~/store'
 import { parseDate } from '~/utils/time'
@@ -95,9 +95,9 @@ const ArticleTitle = () => {
       <h1 className="text-4xl font-ui phone:text-2xl">{title}</h1>
       <div className="flex text-lg text-gray-500 item-center gap-5">
         <time className="">{parseDate(created, 'YYYY-MM-DD dddd')}</time>
-        <div className="flex items-center">
-          <p>{useMemo(() => Math.round(content.length / 400), [])} min red</p>
-          <IoTimeSharp className="mt-0.5 ml-1" />
+        <div className="flex items-center gap-1">
+          <IoTimeOutline className="mt-0.5" />
+          <p>{useMemo(() => Math.round(content.length / 400), [])}m</p>
         </div>
       </div>
     </header>

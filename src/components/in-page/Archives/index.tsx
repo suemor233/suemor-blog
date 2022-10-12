@@ -35,8 +35,8 @@ const Archives = observer(() => {
                 ) : undefined
               }, [])
             }
-            <header className={clsx(`flex gap-2 items-center -ml-1`)}>
-              <span className="w-2.5 h-2.5 rounded-full border-blue-500 border-1 bg-[#FDFDFD]" />
+            <header className={clsx(`flex gap-2 items-center -ml-1 group`)}>
+              <span className="w-2.5 h-2.5 rounded-full border-blue-500 border-1 bg-[#FDFDFD] group-hover:bg-blue-500 transition-colors duration-200" />
               <p
                 className="ml-3 flex-shrink-0"
               >
@@ -44,7 +44,7 @@ const Archives = observer(() => {
                 {parseDate(item.created, 'MM-DD')}
               </p>
               <NextLink href={`/posts/${item._id}`}>
-                <m.p className="text-blue-600 dark:text-blue-500 text-xl hover:underline transition-all"
+                <m.p className="text-blue-600 dark:text-blue-500 text-xl hover:underline"
                       whileHover="whileHover"
                       whileTap="whileTap"
                       variants={titleAnimation}

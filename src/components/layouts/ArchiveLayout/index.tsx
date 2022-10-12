@@ -23,7 +23,7 @@ const ArchiveLayout: FC<
           <h2 className="text-xl  text-center mt-8">
             总共 {archives.count} 篇文章
           </h2>
-          <div className="mt-10 phone:p-2">{children}</div>
+          <div className="mt-5 phone:p-2">{children}</div>
         </m.main>
       </div>
     </ArchiveLayoutContextProvider>
