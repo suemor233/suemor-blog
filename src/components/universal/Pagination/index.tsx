@@ -119,6 +119,7 @@ const Button: FC<
           : 'flex items-end px-1 mb-0.5 dark:bg-black'
       }
       onClick={onClick}
+      aria-label='分页'
     >
       {children}
     </button>
