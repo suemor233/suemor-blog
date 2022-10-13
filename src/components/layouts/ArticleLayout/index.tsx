@@ -7,9 +7,7 @@ import { IoTimeOutline } from 'react-icons/io5'
 import { Avatar } from '~/components/universal/Avatar'
 import { useStore } from '~/store'
 import { parseDate } from '~/utils/time'
-
 import { ArticleLayoutContextProvider, useArticleLayoutProps } from './hooks'
-
 
 export interface ArticleLayoutType   {
   title: string
