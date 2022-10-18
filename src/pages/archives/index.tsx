@@ -6,7 +6,7 @@ import type { AllArchiveType } from '../../api/modules/archive';
 import { allArchiveRequest } from '../../api/modules/archive';
 
 const ArchivesView:NextPage<AllArchiveType> = (archives) => {
-  
+ 
   return (
     <>
         <SEO title='归档'/>
@@ -20,7 +20,7 @@ const ArchivesView:NextPage<AllArchiveType> = (archives) => {
 
 ArchivesView.getInitialProps = async()=> {
     const archives = await allArchiveRequest()
-    return archives
+    return archives 
 }
 
 export default ArchivesView

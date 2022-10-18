@@ -15,6 +15,7 @@ html {
   font-variant-numeric: tabular-nums;
   font-display: swap;
   font-size: 14px;
+  scroll-behavior: smooth;
 }
 
 @media (max-width: 799px) {

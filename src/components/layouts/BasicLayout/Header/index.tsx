@@ -64,7 +64,7 @@ const DesktopNav = () => {
   const { appStore } = useStore()
   const router = useRouter()
   const groupRef = useRef<HTMLAnchorElement>(null)
-  const [ballOffsetLeft, setBallOffsetLeft] = useState(0)
+  const [ballOffsetLeft, setBallOffsetLeft] = useState<null | number>(null)
   const ballIndex = useMemo(
     () => navigation.findIndex((item) => item.path == router.pathname),
     [router.pathname],
@@ -75,25 +75,26 @@ const DesktopNav = () => {
     }
     const $group = groupRef.current
     const $child = $group.children.item(ballIndex) as HTMLElement
-    if ($child) {
-      console.log($child.offsetLeft + $child.getBoundingClientRect().width / 2)
 
-      setBallOffsetLeft(
-        $child.offsetLeft ,
-      )
+    if ($child) {
+      setBallOffsetLeft($child.offsetLeft)
+    } else {
+      setBallOffsetLeft(null)
     }
   }, [ballIndex])
   return (
     <m.header className="flex p-3 justify-between shadow w-full fixed bg-white z-10 items-center dark:bg-[#121212]">
       <DarkMode />
-      <m.nav className="flex items-center flex-row gap-5 phone:gap-0 relative"           ref={groupRef}>
+      <m.nav
+        className="flex items-center flex-row gap-5 phone:gap-0 relative"
+        ref={groupRef}
+      >
         {navigation.map(({ path, Icon, label }, index) => (
           <m.section
             key={path}
             initial="init"
             whileHover="hover"
             whileTap="tap"
-  
           >
             <NextLink
               href={path}
@@ -116,7 +117,10 @@ const DesktopNav = () => {
           className={clsx(
             `absolute inset-0 h-full w-[85px] rounded-lg bg-blue-100 -z-1 transition-all duration-500 left-0`,
           )}
-          style={{ left: `${ballOffsetLeft}px` }}
+          style={{
+            left: `${ballOffsetLeft}px`,
+            display: ballOffsetLeft !== null ? 'block' : 'none',
+          }}
         />
       </m.nav>
     </m.header>
@@ -129,7 +133,7 @@ const MobileNav = () => {
   return (
     <header
       className={clsx(
-        'flex flex-col pt-3 fixed w-full z-1 gap-3 bg-[#FDFDFD] dark:bg-[#121212]'
+        'flex flex-col pt-3 fixed w-full z-1 gap-3 bg-[#FDFDFD] dark:bg-[#121212]',
       )}
     >
       <div className="flex justify-between px-5">

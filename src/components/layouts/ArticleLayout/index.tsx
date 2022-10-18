@@ -8,6 +8,8 @@ import { Avatar } from '~/components/universal/Avatar'
 import { useStore } from '~/store'
 import { parseDate } from '~/utils/time'
 import { ArticleLayoutContextProvider, useArticleLayoutProps } from './hooks'
+import { observer } from 'mobx-react-lite';
+const NAVBAR_MIDDLE = 250   
 
 export interface ArticleLayoutType   {
   title: string
@@ -31,9 +33,8 @@ export interface ArticleLayoutType   {
 }
 
 // FIXME type 有问题
-const ArticleLayout: FC<ArticleLayoutType & PropsWithChildren> = ({ children, title,content,created }) => {
-  const NAVBAR_MIDDLE = 250
-
+const ArticleLayout: FC<ArticleLayoutType & PropsWithChildren> = observer(({ children, title,content,created }) => {
+   const {appStore} = useStore()
   const onScroll = () => {
     const activeItem = document.querySelector('.active') as HTMLElement
     if (activeItem) {
@@ -64,18 +65,21 @@ const ArticleLayout: FC<ArticleLayoutType & PropsWithChildren> = ({ children, ti
         >
           <ArticleTitle />
           <div className="mt-5">{children}</div>
-          <div className="fixed top-[40%] ml-[-20rem] w-[15rem] whitespace-nowrap tablet:hidden">
+          {
+            !appStore.viewport.mobile && <div className="fixed top-[40%] ml-[-20rem] w-[15rem] whitespace-nowrap tablet:hidden">
             <MarkdownNavbar
               source={content}
               declarative={true}
               ordered={false}
             />
           </div>
+          }
+          
         </m.main>
       </div>
     </ArticleLayoutContextProvider>
-  )
-}
+    )
+})
 
 const ArticleTitle = () => {
   const { title, created, content } = useArticleLayoutProps()

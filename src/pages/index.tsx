@@ -26,6 +26,8 @@ const Home: NextPage<PostsPaginateType> = (posts) => {
 
 Home.getInitialProps = async () => {
   const posts = await postPaginate({ pageCurrent: 1, pageSize: 10 })
+ 
+
   return posts
 }
 

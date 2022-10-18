@@ -25,6 +25,7 @@ const ArticleList: FC<Record<'posts', PostsPaginateType>> = ({ posts }) => {
     })
     postListData && setPostList(postListData)
     window.scrollTo({
+      left: 0,
       top: 0,
       behavior: 'smooth',
     })
@@ -111,8 +112,11 @@ const Item: FC<Record<'post', postType>> = ({ post }) => {
         </IconWrapper>
         <IconWrapper>
           <IoPricetagsOutline className="mt-0.5" />
-          {tags.map((item,index) => (
-            <span key={item}>{index !== 0 && ' | '}{item}</span>
+          {tags.map((item, index) => (
+            <span key={item}>
+              {index !== 0 && ' | '}
+              {item}
+            </span>
           ))}
         </IconWrapper>
       </div>

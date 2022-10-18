@@ -4,6 +4,10 @@ import { extend } from 'umi-request'
 import { API_URL } from '~/constants/env'
 import { isClientSide } from '~/utils/env'
 
+
+
+
+
 /**
  * 配置request请求时的默认参数
  */
@@ -36,5 +40,7 @@ client.interceptors.response.use(async (response: any) => {
 
   return response
 })
+
+
 
 export default client
