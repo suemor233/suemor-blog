@@ -10,19 +10,23 @@ import {
   IoTimeOutline,
 } from 'react-icons/io5'
 
-import { postPaginate } from '~/api/modules/posts'
 import Pagination from '~/components/universal/Pagination'
 import type { PostsPaginateType, postType } from '~/types/post'
 import { parseDate } from '~/utils/time'
+import clsx from 'clsx'
 
-const ArticleList: FC<Record<'posts', PostsPaginateType>> = ({ posts }) => {
+
+interface ArticleListProps {
+  posts: PostsPaginateType,
+  fetchPostList: (page: number) => Promise<PostsPaginateType>,
+  path?:string
+}
+
+const ArticleList: FC<ArticleListProps> = ({ posts,fetchPostList,path = '' }) => {
   const [postList, setPostList] = useState<PostsPaginateType>(posts)
   const router = useRouter()
   const updatePostList = async (page: number) => {
-    const postListData = await postPaginate({
-      pageCurrent: page,
-      pageSize: 10,
-    })
+    const postListData = await fetchPostList(page)
     postListData && setPostList(postListData)
     window.scrollTo({
       left: 0,
@@ -51,7 +55,7 @@ const ArticleList: FC<Record<'posts', PostsPaginateType>> = ({ posts }) => {
               <Pagination
                 total={postList.totalPages}
                 initialPage={Number(router.query.page) || 1}
-                onChange={(page) => router.push(`/?page=${page}`)}
+                onChange={(page) => router.push(`${path}?page=${page}`)}
               />
             ),
             [postList.totalPages, router],
@@ -103,20 +107,26 @@ const Item: FC<Record<'post', postType>> = ({ post }) => {
       <div className="mt-2 flex gap-3 text-blue-500 text-md flex-wrap">
         <IconWrapper>
           <IoTimeOutline className="mt-0.5" />
-          <time>{parseDate(created, 'YYYY-MM-DD')}</time>
+          <NextLink href={'/archives'} className='hover:text-blue-700 hover:underline'>
+            <time>{parseDate(created, 'YYYY-MM-DD')}</time>
+          </NextLink>
         </IconWrapper>
 
         <IconWrapper>
           <IoBookmarkOutline className="mt-0.5" />
-          <span>{category.name}</span>
+          <NextLink href={`/categories/${category.slug}`} className='hover:text-blue-700 hover:underline'>
+            <span>{category.name}</span>
+          </NextLink>
         </IconWrapper>
         <IconWrapper>
           <IoPricetagsOutline className="mt-0.5" />
           {tags.map((item, index) => (
-            <span key={item}>
-              {index !== 0 && ' | '}
-              {item}
-            </span>
+            <NextLink href={`/tags/${item}`} key={item} className='hover:text-blue-700 hover:underline'>
+              <span>
+                {index !== 0 && ' | '}
+                {item}
+              </span>
+            </NextLink>
           ))}
         </IconWrapper>
       </div>
@@ -125,7 +135,11 @@ const Item: FC<Record<'post', postType>> = ({ post }) => {
 }
 
 const IconWrapper: FC<PropsWithChildren> = ({ children }) => {
-  return <div className="flex items-center gap-1">{children}</div>
+  return (
+    <div className={clsx('flex items-center gap-1  transition-colors duration-300')}>
+      {children}
+    </div>
+  )
 }
 
 export default ArticleList

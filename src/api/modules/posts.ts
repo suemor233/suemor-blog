@@ -13,3 +13,11 @@ export function postPaginate(params: PageType) {
 export function fetchPostById(id: string) {
   return client.get(`/post/${id}`)
 }
+
+export function fetchPostByCategory(slug: string,params: PageType) {
+  return client.get(`/post/category/${slug}`,{params})
+}
+
+export function fetchPostByCTag(slug: string,params: PageType) {
+  return client.get(`/post/tag/${slug}`,{params})
+}

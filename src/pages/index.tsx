@@ -1,5 +1,7 @@
 import { observer } from 'mobx-react-lite'
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
+import { useCallback, useState } from 'react'
 
 import { postPaginate } from '~/api/modules/posts'
 import { SEO } from '~/components/biz/Seo'
@@ -7,27 +9,32 @@ import ArticleList from '~/components/in-page/Home/artcile-list'
 import UserInfo from '~/components/in-page/Home/user-info'
 import { useStore } from '~/store'
 import type { PostsPaginateType } from '~/types/post'
+import { PageLayout } from '../components/layouts/PageLayout/index';
 
 const Home: NextPage<PostsPaginateType> = (posts) => {
   const { userStore } = useStore()
+  const fetchPostList = useCallback(
+    (page: number) =>
+      postPaginate({
+        pageCurrent: page,
+        pageSize: 10,
+      }),
+    [],
+  )
   return (
-    <div className="flex flex-col items-center">
+    <PageLayout>
       <SEO
         title={`${userStore.username}的博客`}
         description={userStore.master?.introduce}
       />
-      <div className="w-[52rem] w900:max-w-[45rem] w900:w-auto mt-5 px-5">
-        <UserInfo />
-        <ArticleList posts={posts} />
-      </div>
-    </div>
+      <UserInfo />
+        <ArticleList posts={posts} fetchPostList={fetchPostList}/>
+    </PageLayout>
   )
 }
 
 Home.getInitialProps = async () => {
   const posts = await postPaginate({ pageCurrent: 1, pageSize: 10 })
- 
-
   return posts
 }
 
