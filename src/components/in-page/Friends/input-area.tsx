@@ -1,4 +1,4 @@
-import { useCallback, useReducer } from 'react'
+import { FormEvent, useCallback, useReducer } from 'react'
 import { message } from 'react-message-popup'
 
 import { auditLink } from '~/api/modules/friends'
@@ -31,7 +31,8 @@ const useFormData = () => {
 
 const InputArea = () => {
   const [state, dispatch] = useFormData()
-  const handleSubmit = useCallback(() => {
+  const handleSubmit = useCallback((e:FormEvent) => {
+    e.preventDefault()
     if (!state.name) {
       message.error('站点标题不能为空')
       return
@@ -59,7 +60,7 @@ const InputArea = () => {
   }, [state])
   return (
     <div className="border-gray-300 border-1 border-opacity-90 rounded-md p-5 relative">
-      <form action="#" onSubmit={handleSubmit} className='flex flex-col gap-4'>
+      <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <div className="flex justify-between gap-2">
           <input
             type="text"
@@ -97,17 +98,17 @@ const InputArea = () => {
             dispatch({ type: 'set', data: { description: e.target.value } })
           }
         />
-      </form>
-
-      <div className="absolute bottom-2 right-2">
+        <div className="absolute bottom-2 right-2">
         <button
           className=" bg-blue-500 py-2 px-3 text-white rounded-xl"
           type="submit"
-          onClick={handleSubmit}
         >
           申请友链
         </button>
       </div>
+      </form>
+
+      
     </div>
   )
 }

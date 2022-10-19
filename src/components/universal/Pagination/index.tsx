@@ -1,5 +1,6 @@
 import clsx from 'clsx'
-import type { FC, HTMLProps, PropsWithChildren } from 'react';
+import { useRouter } from 'next/router';
+import { FC, HTMLProps, PropsWithChildren, useEffect } from 'react';
 import { memo , useMemo, useState } from 'react'
 import {
   MdOutlineArrowBackIosNew,
@@ -15,6 +16,10 @@ interface PaginationProps {
 const Pagination: FC<PaginationProps> = (props) => {
   const { total, initialPage } = props
   const [currentPage, setCurrentPage] = useState(initialPage)
+  const router = useRouter()
+  useEffect(() => {
+    !router.query.page && setCurrentPage(initialPage)
+}, [router.query])
   const paginationCenter = useMemo(() => {
     const front = () => {
       const arr: number[] = []

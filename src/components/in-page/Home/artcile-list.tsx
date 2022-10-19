@@ -35,9 +35,7 @@ const ArticleList: FC<ArticleListProps> = ({ posts,fetchPostList,path = '' }) =>
     })
   }
   useEffect(() => {
-    if (router.query.page) {
-      updatePostList(Number(router.query.page))
-    }
+      updatePostList(Number(router.query.page)  || 1)
   }, [router.query])
   if (postList.postList.length <= 0) {
     return <div className="h-screen">主人还没写过博客</div>

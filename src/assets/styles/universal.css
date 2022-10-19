@@ -3,9 +3,9 @@
   left: 0;
   right: 0;
   bottom: 0;
-  opacity: .3;
+  opacity: .4;
   z-index: -1;
   content: "";
   position: fixed;
-  background: url(https://api.paugram.com/wallpaper?source=gt) center/cover;
+  background: url(/bg3.png) center/cover;
 }
