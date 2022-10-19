@@ -15,12 +15,12 @@ const UserInfo = () => {
         shadow={false}
         imageUrl={userStore.master?.avatar || ''}
         useRandomColor={false}
-        size={100}
+        size={90}
         lazy={false}
         alt={'suemor avatar'}
       />
       <div className="flex flex-col justify-center items-start">
-        <p className="text-3xl font-bold">{userStore.username}</p>
+        <p className="text-3xl phone:text-xl">{userStore.username}</p>
         <p className="text-md mt-1 line-clamp-1 overflow-ellipsis overflow-hidden">{userStore.introduce}</p>
         <div className="flex gap-5 justify-center text-blue-400 mt-2 text-2xl">
           {Object.keys(userStore.master?.socialIds || {}).map((key) => (

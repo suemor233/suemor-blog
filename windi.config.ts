@@ -1,6 +1,6 @@
+import defaultTheme from 'windicss/defaultTheme'
 import { defineConfig } from 'windicss/helpers'
 import plugin from 'windicss/plugin'
-import defaultTheme from 'windicss/defaultTheme'
 
 export default defineConfig({
   extract: {
@@ -49,9 +49,9 @@ export default defineConfig({
         w900: { raw: '(max-width: 900px)' },
       },
       fontFamily: {
-       ui: ['FZMiaoWu', ...defaultTheme.fontFamily.sans],
-       content: ['Noto Sans TC', 'Noto Sans SC', '微軟正黑體', ...defaultTheme.fontFamily.serif],
-      }
+        ui: ['FZMiaoWu', ...defaultTheme.fontFamily.sans],
+        serif: 'var(--serif-font)',
+      },
     },
   },
 })

@@ -5,7 +5,7 @@ import { backdropMotion } from '~/components/in-page/Home/artcile-list'
 
 const FriendsLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className="mt-10">
+    <div className="mt-10 phone:mt-5">
       <m.main
         variants={backdropMotion}
         initial="exit"
@@ -14,7 +14,7 @@ const FriendsLayout: FC<PropsWithChildren> = ({ children }) => {
         className="max-w-[43rem] mx-auto my-0"
       >
         <h1 className="text-4xl font-ui text-center">我的朋友</h1>
-        <div className='mt-10 phone:p-2'>{children}</div>
+        <div className='mt-10 phone:p-2 phone:mt-0'>{children}</div>
       </m.main>
     </div>
   )

@@ -1,7 +1,11 @@
 :root {
-  --blue:#96c5f5;
+  --blue: #96c5f5;
   --light-bg: #fff;
   --gray: #dfe6e9;
+
+  --sans-font: system-ui, -apple-system, PingFang SC, 'Microsoft YaHei',
+    Segoe UI, Roboto, Helvetica, noto sans sc, hiragino sans gb, 'sans-serif',
+    Apple Color Emoji, Segoe UI Emoji, Not Color Emoji;
 }
 
 html {
@@ -16,6 +20,7 @@ html {
   font-display: swap;
   font-size: 14px;
   scroll-behavior: smooth;
+  font-family: var(--sans-font);
 }
 
 @media (max-width: 799px) {
@@ -29,19 +34,18 @@ body::-webkit-scrollbar {
   height: 0;
 }
 
-input{  
-	background:none;  
-	outline:none;  
-	border:0px;
+input {
+  background: none;
+  outline: none;
+  border: 0px;
 }
 
-textarea{
-	border:none;
-	outline: none;
-	resize: none;
-	background:transparent;
+textarea {
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
 }
-
 
 ::-webkit-scrollbar {
   width: 10px;
@@ -55,7 +59,6 @@ textarea{
   border: 3px solid transparent;
   border-radius: 5px;
 }
-
 
 ::-webkit-scrollbar {
   width: 4px;
@@ -89,6 +92,6 @@ a {
     @apply bg-[#FAFAFA] bg-opacity-30 text-black transition-colors dark:bg-[#121212] dark:bg-opacity-70 dark:text-[#dee1e7];
   }
   .dark-bg {
-    @apply dark:bg-[#282828]
+    @apply dark:bg-[#282828];
   }
 }

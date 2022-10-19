@@ -7,14 +7,12 @@ import { useMemo } from 'react'
 
 import { useArchiveLayoutProps } from '~/components/layouts/ArchiveLayout/hooks'
 import { useStore } from '~/store'
-import { isServerSide } from '~/utils/env'
 import { parseDate } from '~/utils/time'
 import { titleAnimation } from './motion'
 
 const Archives = observer(() => {
   const { posts } = useArchiveLayoutProps()
   const { appStore } = useStore()
-  const isMobile = isServerSide() || window.innerWidth <= 568
   return (
     <div className="relative flex flex-col gap-3">
       <div className="h-[97%] absolute w-0.5 bg-blue-300 -z-1 mt-5" />
