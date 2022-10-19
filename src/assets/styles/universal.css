@@ -7,5 +7,5 @@
   z-index: -1;
   content: "";
   position: fixed;
-  background: url(/bg3.png) center/cover;
+  background: url(/bg.png) center/cover;
 }

@@ -7,6 +7,7 @@ node_modules/
 # typescript build output
 dist
 .env
+.DS_Store
 
 # pwa
 sw.js
