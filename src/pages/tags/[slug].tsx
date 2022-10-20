@@ -1,9 +1,9 @@
-import { NextPage } from 'next'
+import type { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { useCallback } from 'react'
 import { IoPricetagsOutline } from 'react-icons/io5'
 
-import { fetchPostByCTag, fetchPostByCategory } from '~/api/modules/posts'
+import { fetchPostByCTag } from '~/api/modules/posts'
 import ArticleList from '~/components/in-page/Home/artcile-list'
 import { PageLayout } from '~/components/layouts/PageLayout'
 import type { PostsPaginateType } from '~/types/post'

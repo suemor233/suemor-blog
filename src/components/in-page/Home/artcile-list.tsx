@@ -41,7 +41,7 @@ const ArticleList: FC<ArticleListProps> = ({ posts,fetchPostList,path = '' }) =>
     return <div className="h-screen">主人还没写过博客</div>
   }
   return (
-    <m.section className="flex flex-col gap-5 mt-4">
+    <m.section className="flex flex-col gap-5 mt-4 phone:mt-3">
       {postList.postList?.map((item) => (
         <Item key={item._id} post={item} />
       ))}

@@ -16,6 +16,9 @@ import {
   IoPersonSharp,
 } from 'react-icons/io5'
 
+import { titleAnimation } from '~/components/in-page/Archives/motion'
+import { FloatPopover } from '~/components/universal/FloatPopover'
+import { socialIcon } from '~/constants/social-icon'
 import { useColorMode } from '~/hooks/use-color-mode'
 
 import { useStore } from '../../../../store/index'
@@ -57,12 +60,17 @@ export const navigation: NavItem[] = [
 
 const Header = () => {
   const { appStore } = useStore()
-  return appStore.viewport.mobile ? <MobileNav /> : <DesktopNav />
+  return appStore.viewport.mobile || appStore.viewport.pad ? (
+    <MobileNav />
+  ) : (
+    <DesktopNav />
+  )
 }
 
 const DesktopNav = () => {
-  const { appStore } = useStore()
+  const { appStore, userStore } = useStore()
   const router = useRouter()
+  const { isDark } = useColorMode()
   const groupRef = useRef<HTMLAnchorElement>(null)
   const [ballOffsetLeft, setBallOffsetLeft] = useState<null | number>(null)
   const ballIndex = useMemo(
@@ -84,12 +92,46 @@ const DesktopNav = () => {
   }, [ballIndex])
   return (
     <m.header className="flex p-3 justify-between shadow w-full fixed bg-white z-10 items-center dark:bg-[#121212]">
-      <DarkMode />
+      <div className="flex items-center">
+        <FloatPopover
+          TriggerComponent={() => (
+            <span className="text-gray-600 text-base text-center">
+             {`当前: ${isDark ? '夜间模式' : '白天模式'}`}
+            </span>
+          )}
+        >
+          <DarkMode />
+        </FloatPopover>
+        <div className="flex gap-6 justify-center text-blue-400 mt-2 text-2xl ml-8 mb-0.5">
+          {Object.keys(userStore.master?.socialIds || {}).map((key) => (
+            <FloatPopover
+              key={key}
+              TriggerComponent={() => (
+                <span className="text-gray-600 text-base text-center">
+                  {key}
+                </span>
+              )}
+            >
+              <m.a
+                whileHover="whileHover"
+                whileTap="whileTap"
+                variants={titleAnimation}
+                target="_blank"
+                href={userStore.master?.socialIds?.[key]}
+                aria-label={key}
+              >
+                {socialIcon(key)}
+              </m.a>
+            </FloatPopover>
+          ))}
+        </div>
+      </div>
+
       <m.nav
-        className="flex items-center flex-row gap-5 phone:gap-0 relative"
+        className="flex items-center flex-row gap-5  phone:gap-0 relative"
         ref={groupRef}
       >
-        {navigation.map(({ path, Icon, label }, index) => (
+        {navigation.map(({ path, Icon, label }) => (
           <m.section
             key={path}
             initial="init"
@@ -130,6 +172,7 @@ const DesktopNav = () => {
 const MobileNav = () => {
   const ul = useRef<HTMLUListElement>(null)
   const [show, setShow] = useState(false)
+  const { userStore } = useStore()
   return (
     <header
       className={clsx(
@@ -146,7 +189,7 @@ const MobileNav = () => {
       <ul
         className={clsx(
           'w-full bg-white h-max-0 overflow-hidden transition-all duration-500 px-5 dark:bg-[#121212] ',
-          show && 'h-max-[12rem] shadow-md',
+          show && 'h-max-[15.5rem] shadow-md',
         )}
         ref={ul}
       >
@@ -164,6 +207,19 @@ const MobileNav = () => {
             <IoChevronForwardOutline className="group-hover:text-blue-500 " />
           </NextLink>
         ))}
+        <div className="flex justify-between px-3 text-blue-400 mt-4 text-2xl mb-0.5 flex-nowrap">
+          {Object.keys(userStore.master?.socialIds || {}).map((key) => (
+            <a
+    
+              target="_blank"
+              href={userStore.master?.socialIds?.[key]}
+              aria-label={key}
+              key={key}
+            >
+              {socialIcon(key)}
+            </a>
+          ))}
+        </div>
       </ul>
     </header>
   )

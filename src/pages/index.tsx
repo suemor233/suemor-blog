@@ -1,7 +1,6 @@
 import { observer } from 'mobx-react-lite'
 import type { NextPage } from 'next'
-import { useRouter } from 'next/router'
-import { useCallback, useState } from 'react'
+import { useCallback } from 'react'
 
 import { postPaginate } from '~/api/modules/posts'
 import { SEO } from '~/components/biz/Seo'
@@ -9,7 +8,8 @@ import ArticleList from '~/components/in-page/Home/artcile-list'
 import UserInfo from '~/components/in-page/Home/user-info'
 import { useStore } from '~/store'
 import type { PostsPaginateType } from '~/types/post'
-import { PageLayout } from '../components/layouts/PageLayout/index';
+
+import { PageLayout } from '../components/layouts/PageLayout/index'
 
 const Home: NextPage<PostsPaginateType> = (posts) => {
   const { userStore } = useStore()
@@ -28,7 +28,7 @@ const Home: NextPage<PostsPaginateType> = (posts) => {
         description={userStore.master?.introduce}
       />
       <UserInfo />
-        <ArticleList posts={posts} fetchPostList={fetchPostList}/>
+      <ArticleList posts={posts} fetchPostList={fetchPostList} />
     </PageLayout>
   )
 }

@@ -1,22 +1,26 @@
 import clsx from 'clsx'
 import type { FC, PropsWithChildren } from 'react'
 
-
 interface IProps {
-  content?: string
+  TriggerComponent?: FC
   className?: string
 }
 
-// TODO FloatPopover
 export const FloatPopover: FC<IProps & PropsWithChildren> = (props) => {
-  const { content, className, children } = props
+  const { TriggerComponent, children } = props
   return (
-    <a className={clsx(className,'')}>
-        {content}
-    </a>
-    // <div className='flex flex-col'>
-    //   <a className="">{children}</a>
-    //   <span className='w-full bg-white rounded-md shadow-xl absolute'></span>
-    // </div>
+    <div className="relative group">
+      {children}
+      <div
+        className={clsx(
+          'absolute pointer-events-none opacity-0 transform -translate-y-4 top-8',
+          'bg-white px-2 py-1 rounded-md group-hover:pointer-events-auto group-hover:opacity-100 ',
+          'shadow-md transition-all duration-400 group-hover:translate-y-0 flex whitespace-nowrap justify-center',
+        )}
+      >
+        {TriggerComponent && <TriggerComponent />}
+      </div>
+   
+    </div>
   )
 }

@@ -1,4 +1,5 @@
-import { FormEvent, useCallback, useReducer } from 'react'
+import type { FormEvent} from 'react';
+import { useCallback, useReducer } from 'react'
 import { message } from 'react-message-popup'
 
 import { auditLink } from '~/api/modules/friends'

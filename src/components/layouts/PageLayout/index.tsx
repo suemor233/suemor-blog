@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from 'react';
+import type { FC, PropsWithChildren } from 'react';
 export const PageLayout:FC<PropsWithChildren> = ({children}) => {
   return (
     <div className="flex flex-col items-center">
