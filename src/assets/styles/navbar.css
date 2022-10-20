@@ -7,7 +7,7 @@
 .dark .markdown-navigation {
   --nav-blue:#F3F4F6;
   --nav-text-blue:#3B82F6;
-  --nav-bg-blue:rgb(59, 130, 246,0.3);
+  --nav-bg-blue:var(--dark-header-bg);
 }
 .markdown-navigation .title-anchor {
   display: block;

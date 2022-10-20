@@ -19,6 +19,7 @@ const UserInfo = () => {
       />
 
       <p className="text-5xl font-ui">{userStore.username}</p>
+      
       <p className="text-md mt-1 line-clamp-1 overflow-ellipsis overflow-hidden text-gray-500">
         {userStore.introduce}
       </p>

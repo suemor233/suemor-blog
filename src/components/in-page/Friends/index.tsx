@@ -62,7 +62,7 @@ const Friends: FC<Record<'friends', FriendsType[]>> = memo(({ friends }) => {
             <div>
               <Avatar imageUrl={item.avatar} lazy={false} />
             </div>
-            <div className="ml-2 flex flex-col justify-center">
+            <div className="ml-2 flex flex-col justify-center gap-1">
               <p className="text-xl text-blue-500">{item.name}</p>
               <p className="text-sm text-deepgray line-clamp-2 break-all">
                 {item.description}

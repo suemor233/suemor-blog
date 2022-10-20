@@ -91,11 +91,11 @@ const DesktopNav = () => {
     }
   }, [ballIndex])
   return (
-    <m.header className="flex p-3 justify-between shadow w-full fixed bg-white z-10 items-center dark:bg-[#121212]">
+    <m.header className="flex p-3 justify-between shadow w-full fixed bg-white z-10 items-center dark:bg-[var(--dark-header-bg)]">
       <div className="flex items-center">
         <FloatPopover
           TriggerComponent={() => (
-            <span className="text-gray-600 text-base text-center">
+            <span className="text-base text-center">
              {`当前: ${isDark ? '夜间模式' : '白天模式'}`}
             </span>
           )}
@@ -107,7 +107,7 @@ const DesktopNav = () => {
             <FloatPopover
               key={key}
               TriggerComponent={() => (
-                <span className="text-gray-600 text-base text-center">
+                <span className="text-base text-center">
                   {key}
                 </span>
               )}
@@ -157,7 +157,7 @@ const DesktopNav = () => {
         ))}
         <m.span
           className={clsx(
-            `absolute inset-0 h-full w-[85px] rounded-lg bg-blue-100 -z-1 transition-all duration-500 left-0`,
+            `absolute inset-0 h-full w-[85px] rounded-lg bg-blue-100 -z-1 transition-all duration-500 left-0 dark:bg-[var(--dark-content-bg)]`,
           )}
           style={{
             left: `${ballOffsetLeft}px`,
@@ -207,10 +207,10 @@ const MobileNav = () => {
             <IoChevronForwardOutline className="group-hover:text-blue-500 " />
           </NextLink>
         ))}
-        <div className="flex justify-between px-3 text-blue-400 mt-4 text-2xl mb-0.5 flex-nowrap">
+        <div className="justify-center gap-10 text-white text-2xl mb-0.5 flex-nowrap flex">
           {Object.keys(userStore.master?.socialIds || {}).map((key) => (
             <a
-    
+              className='bg-blue-400 rounded-full w-10 h-10 flex justify-center items-center'
               target="_blank"
               href={userStore.master?.socialIds?.[key]}
               aria-label={key}

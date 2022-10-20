@@ -2,7 +2,8 @@
   --blue: #96c5f5;
   --light-bg: #fff;
   --gray: #dfe6e9;
-
+  --dark-header-bg: #333333;
+  --dark-content-bg: #222222;
   --sans-font: system-ui, -apple-system, PingFang SC, 'Microsoft YaHei',
     Segoe UI, Roboto, Helvetica, noto sans sc, hiragino sans gb, 'sans-serif',
     Apple Color Emoji, Segoe UI Emoji, Not Color Emoji;
@@ -89,9 +90,9 @@ a {
 
 @layer base {
   .theme-container {
-    @apply bg-[#FAFAFA] bg-opacity-30 text-black transition-colors dark:bg-[#121212] dark:bg-opacity-70 dark:text-[#dee1e7];
+    @apply bg-[#FAFAFA] bg-opacity-30 text-black transition-colors dark:bg-[var(--dark-content-bg)] dark:bg-opacity-70 dark:text-[#dee1e7];
   }
   .dark-bg {
-    @apply dark:bg-[#282828];
+    @apply dark:bg-[var(--dark-content-bg)]
   }
 }

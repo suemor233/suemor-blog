@@ -91,7 +91,7 @@ const Item: FC<Record<'post', postType>> = ({ post }) => {
       animate="enter"
       exit="exit"
       whileHover={'hover'}
-      className="p-4 hover:bg-gray-200 dark:hover:bg-gray-700 hover:rounded-md hover:bg-opacity-20 "
+      className="p-4 hover:bg-gray-200 dark:hover:bg-[var(--dark-header-bg)] hover:rounded-md hover:bg-opacity-20 "
     >
       <NextLink href={`/posts/${_id}`}>
         <h2 className="text-2xl cursor-pointer inline-block duration-300 transition-all hover:text-blue-500">
@@ -99,8 +99,8 @@ const Item: FC<Record<'post', postType>> = ({ post }) => {
         </h2>
       </NextLink>
 
-      <p className="text-gray-500 mt-2 dark:text-gray-400 line-clamp-3 text-lg ">
-        {content}
+      <p className="text-gray-500 mt-2 dark:text-gray-400 line-clamp-3 text-lg leading-8">
+        {content}...
       </p>
       <div className="mt-2 flex gap-3 text-blue-500 text-md flex-wrap">
         <IconWrapper>
