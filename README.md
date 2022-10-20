@@ -5,7 +5,7 @@
 ## 预览
 
 <p align="middle">
-<img src="https://y.suemor.com/imagessuemor-home-2.jpg" width="1000" alt="home"  />
+<img src="https://y.suemor.com/imagessuemor-blog-home-3.jpg" width="1000" alt="home"  />
 <img src="https://y.suemor.com/imagessuemor-post-2.jpg" width="1000" alt="post"  />
 <img src="https://y.suemor.com/imagessuemor-friends-2.jpg" width="1000" alt="friend"  />
 </p>
