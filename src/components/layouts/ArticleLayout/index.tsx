@@ -1,23 +1,31 @@
-import type { Variants } from 'framer-motion';
+import type { Variants } from 'framer-motion'
 import { m } from 'framer-motion'
 import MarkdownNavbar from 'markdown-navbar'
-import type { FC, PropsWithChildren} from 'react';
-import { useEffect , useMemo } from 'react'
+import { observer } from 'mobx-react-lite'
+import type { FC, PropsWithChildren } from 'react'
+import { useEffect, useMemo } from 'react'
 import { IoTimeOutline } from 'react-icons/io5'
+
 import { Avatar } from '~/components/universal/Avatar'
 import { useStore } from '~/store'
+import { categoryType } from '~/types/post'
 import { parseDate } from '~/utils/time'
-import { ArticleLayoutContextProvider, useArticleLayoutProps } from './hooks'
-import { observer } from 'mobx-react-lite';
-const NAVBAR_MIDDLE = 250   
 
-export interface ArticleLayoutType   {
+import { ArticleLayoutContextProvider, useArticleLayoutProps } from './hooks'
+
+
+const NAVBAR_MIDDLE = 250
+
+export interface ArticleLayoutType {
   title: string
   content:string
   created:string
+  tags?: string[]
+  category?: categoryType
+  Comment?: FC
 }
 
- const ArticleMotion: Variants = {
+const ArticleMotion: Variants = {
   exit: {
     opacity: 0,
     transition: {
@@ -27,59 +35,62 @@ export interface ArticleLayoutType   {
   enter: {
     opacity: 1,
     transition: {
-      duration: 0.3
+      duration: 0.3,
     },
-  }
+  },
 }
 
-// FIXME type 有问题
-const ArticleLayout: FC<ArticleLayoutType & PropsWithChildren> = observer(({ children, title,content,created }) => {
-   const {appStore} = useStore()
-  const onScroll = () => {
-    const activeItem = document.querySelector('.active') as HTMLElement
-    if (activeItem) {
-      const offsetTop = activeItem.offsetTop
-      const navbar = document.querySelector('.markdown-navigation ') as Element
-      if (offsetTop > NAVBAR_MIDDLE) {
-        navbar.scrollTop = offsetTop - NAVBAR_MIDDLE
-      } else {
-        navbar.scrollTop = 0
+const ArticleLayout: FC<ArticleLayoutType & PropsWithChildren> = observer(
+  ({ children, title,content,created , Comment,category,tags }) => {
+    const { appStore } = useStore()
+    const onScroll = () => {
+      const activeItem = document.querySelector('.active') as HTMLElement
+      if (activeItem) {
+        const offsetTop = activeItem.offsetTop
+        const navbar = document.querySelector(
+          '.markdown-navigation ',
+        ) as Element
+        if (offsetTop > NAVBAR_MIDDLE) {
+          navbar.scrollTop = offsetTop - NAVBAR_MIDDLE
+        } else {
+          navbar.scrollTop = 0
+        }
       }
     }
-  }
-  useEffect(() => {
-    window.addEventListener('scroll', onScroll)
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-    }
-  }, [])
-  return (
-    <ArticleLayoutContextProvider value={{title,content,created}}>
-      <div>
-        <m.main
-          className="max-w-[48rem] mx-auto my-0 border-gray-200 phone:border-none border-1 rounded-2xl p-8 dark:border-gray-600 bg-white dark-bg relative"
-          variants={ArticleMotion}
-          initial="exit"
-          animate="enter"
-          exit="exit"
-        >
-          <ArticleTitle />
-          <div className="mt-5">{children}</div>
-          {
-            !appStore.viewport.mobile && <div className="fixed top-[40%] ml-[-20rem] w-[15rem] whitespace-nowrap tablet:hidden">
-            <MarkdownNavbar
-              source={content}
-              declarative={true}
-              ordered={false}
-            />
-          </div>
-          }
-          
-        </m.main>
-      </div>
-    </ArticleLayoutContextProvider>
+    useEffect(() => {
+      window.addEventListener('scroll', onScroll)
+      return () => {
+        window.removeEventListener('scroll', onScroll)
+      }
+    }, [])
+    return (
+      <ArticleLayoutContextProvider value={{title,content,created,category,tags}}>
+        <div className='max-w-[48rem] mx-auto my-0'>
+          <m.main
+            className="border-gray-200 phone:border-none border-1 rounded-2xl p-8 dark:border-gray-600 bg-white dark-bg relative"
+            variants={ArticleMotion}
+            initial="exit"
+            animate="enter"
+            exit="exit"
+          >
+            <ArticleTitle />
+            <div className="mt-5">{children}</div>
+            {!appStore.viewport.mobile && (
+              <div className="fixed top-[40%] ml-[-20rem] w-[15rem] whitespace-nowrap tablet:hidden">
+                <MarkdownNavbar
+                  source={content}
+                  declarative={true}
+                  ordered={false}
+                />
+              </div>
+            )}
+          </m.main>
+          {Comment && <Comment />}
+        </div>
+      </ArticleLayoutContextProvider>
     )
-})
+  },
+)
 
 const ArticleTitle = () => {
   const { title, created, content } = useArticleLayoutProps()

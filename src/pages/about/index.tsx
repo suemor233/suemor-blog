@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import dynamic from 'next/dynamic'
 
 import { getPageBySlug } from '~/api/modules/page'
 import ArticleLayout from '~/components/layouts/ArticleLayout'
@@ -6,6 +7,9 @@ import Markdown from '~/components/universal/Markdown'
 
 import type { PagePostType } from '../../api/modules/page'
 import { SEO } from '../../components/biz/Seo/index'
+const CommentLazy = dynamic(() =>
+  import('~/components/in-page/Posts/comment').then((mo) => mo.Comment),
+)
 
 const AboutView: NextPage<Record<'data', PagePostType>> = (about) => {
 
@@ -27,7 +31,7 @@ const AboutView: NextPage<Record<'data', PagePostType>> = (about) => {
           },
         }}
       />
-      <ArticleLayout content={content} title={title} created={created}>
+      <ArticleLayout content={content} title={title} created={created}  Comment={() => <CommentLazy />}>
         <Markdown />
       </ArticleLayout>
     </>
