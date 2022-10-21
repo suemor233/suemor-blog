@@ -71,7 +71,7 @@ jobs:
           asset_path: ./release.zip
           asset_name: release-ubuntu.zip
           asset_content_type: application/zip
-    deploy:
+  deploy:
       name: Deploy To Remote Server
       runs-on: ubuntu-latest
       needs: [build]
