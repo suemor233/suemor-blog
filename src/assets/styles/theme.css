@@ -93,6 +93,9 @@ a {
     @apply bg-[#FAFAFA] bg-opacity-30 text-black transition-colors dark:bg-[var(--dark-content-bg)] dark:bg-opacity-70 dark:text-[#dee1e7];
   }
   .dark-bg {
-    @apply dark:bg-[var(--dark-content-bg)]
+    @apply dark:bg-[var(--dark-content-bg)];
+  }
+  .card-border {
+    @apply dark:border-gray-600 border-1 border-gray-200 bg-white dark:bg-[var(--dark-content-bg)] rounded-md phone:border-none;
   }
 }

@@ -4,6 +4,7 @@ import { useCallback } from 'react'
 import { IoPricetagsOutline } from 'react-icons/io5'
 
 import { fetchPostByCTag } from '~/api/modules/posts'
+import { SEO } from '~/components/biz/Seo'
 import ArticleList from '~/components/in-page/Home/artcile-list'
 import { PageLayout } from '~/components/layouts/PageLayout'
 import type { PostsPaginateType } from '~/types/post'
@@ -21,10 +22,14 @@ const TagsView: NextPage<PostsPaginateType> = (posts) => {
 
   return (
     <PageLayout>
-      <h1 className="text-3xl  text-center">
-      <IoPricetagsOutline className="mr-2" />
-        标签: {router.query.slug} ({posts.totalCount} 篇文章)
-      </h1>
+       <SEO title={`标签: ${router.query.slug}`}/>
+      <div className="text-3xl flex justify-center items-center py-5">
+        <IoPricetagsOutline className="mr-2" />
+        <h1>
+          标签: {router.query.slug} ({posts.totalCount} 篇文章)
+        </h1>
+      </div>
+
       <ArticleList
         posts={posts}
         fetchPostList={fetchPostList}

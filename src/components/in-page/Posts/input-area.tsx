@@ -54,7 +54,7 @@ const InputArea = () => {
     // })
   }, [state])
   return (
-    <div className="border-gray-300 border-1 border-opacity-90 rounded-md p-5 relative">
+    <div className="card-border p-5 relative">
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <div className="flex justify-between gap-2">
           <input

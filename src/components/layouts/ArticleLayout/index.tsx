@@ -67,7 +67,7 @@ const ArticleLayout: FC<ArticleLayoutType & PropsWithChildren> = observer(
       <ArticleLayoutContextProvider value={{title,content,created,category,tags}}>
         <div className='max-w-[48rem] mx-auto my-0'>
           <m.main
-            className="border-gray-200 phone:border-none border-1 rounded-2xl p-8 dark:border-gray-600 bg-white dark-bg relative"
+            className="card-border px-8 py-4 relative"
             variants={ArticleMotion}
             initial="exit"
             animate="enter"
