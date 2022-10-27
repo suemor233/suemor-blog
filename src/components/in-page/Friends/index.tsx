@@ -39,7 +39,7 @@ const Friends: FC<Record<'friends', FriendsType[]>> = memo(({ friends }) => {
   const { userStore } = useStore()
   const [url, setUrl] = useState('')
   useEffect(() => {
-    setUrl(window.location.host)
+    setUrl(window.location.origin)
   }, [])
   return (
     <m.div
@@ -108,11 +108,11 @@ const Friends: FC<Record<'friends', FriendsType[]>> = memo(({ friends }) => {
           <div className="flex">
             <p className=" font-semibold font-ui">网站地址:&nbsp;</p>
             <a
-              href={userStore.master?.avatar}
+              href={url}
               target="_blank"
               className="text-blue-600"
             >
-              https://{url}
+             {url}
             </a>
           </div>
         </div>
