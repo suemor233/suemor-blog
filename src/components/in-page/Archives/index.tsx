@@ -8,6 +8,7 @@ import { useMemo } from 'react'
 import { useArchiveLayoutProps } from '~/components/layouts/ArchiveLayout/hooks'
 import { useStore } from '~/store'
 import { parseDate } from '~/utils/time'
+
 import { titleAnimation } from './motion'
 
 const Archives = observer(() => {
@@ -15,10 +16,10 @@ const Archives = observer(() => {
   const { appStore } = useStore()
   return (
     <div className="relative flex flex-col gap-3">
-      <div className="h-[97%] absolute w-0.5 bg-blue-300 -z-1 mt-5" />
+      <div className="h-[96%] absolute w-0.5 bg-blue-300 dark:z-5 dark:bg-gray-500 -z-1 mt-5" />
       {posts.map((item, index) => {
         return (
-          <article key={item._id}>
+          <article key={item._id} className="dark:z-10">
             {
               // eslint-disable-next-line react-hooks/rules-of-hooks
               useMemo(() => {
@@ -34,17 +35,15 @@ const Archives = observer(() => {
             }
             <header className={clsx(`flex gap-2 items-center -ml-1 group`)}>
               <span className="w-2.5 h-2.5 rounded-full border-blue-500 border-1 bg-[#FDFDFD] group-hover:bg-blue-500 transition-colors duration-200" />
-              <p
-                className="ml-3 flex-shrink-0"
-              >
-              
+              <p className="ml-3 flex-shrink-0">
                 {parseDate(item.created, 'MM-DD')}
               </p>
               <NextLink href={`/posts/${item._id}`}>
-                <m.p className="text-blue-600 dark:text-blue-500 text-xl hover:underline"
-                      whileHover="whileHover"
-                      whileTap="whileTap"
-                      variants={titleAnimation}
+                <m.p
+                  className="text-blue-600 dark:text-blue-500 text-xl hover:underline"
+                  whileHover="whileHover"
+                  whileTap="whileTap"
+                  variants={titleAnimation}
                 >
                   {item.title}
                 </m.p>
