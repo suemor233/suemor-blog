@@ -8,21 +8,23 @@ import { IoTimeOutline } from 'react-icons/io5'
 
 import { Avatar } from '~/components/universal/Avatar'
 import { useStore } from '~/store'
-import { categoryType } from '~/types/post'
+import { categoryType, switchType } from '~/types/post'
 import { parseDate } from '~/utils/time'
 
 import { ArticleLayoutContextProvider, useArticleLayoutProps } from './hooks'
-
 
 const NAVBAR_MIDDLE = 250
 
 export interface ArticleLayoutType {
   title: string
-  content:string
-  created:string
+  content: string
+  created: string
   tags?: string[]
   category?: categoryType
   Comment?: FC
+  SwitchArticle?: FC
+  last?:switchType
+  next?:switchType
 }
 
 const ArticleMotion: Variants = {
@@ -41,7 +43,18 @@ const ArticleMotion: Variants = {
 }
 
 const ArticleLayout: FC<ArticleLayoutType & PropsWithChildren> = observer(
-  ({ children, title,content,created , Comment,category,tags }) => {
+  ({
+    children,
+    title,
+    content,
+    created,
+    Comment,
+    category,
+    tags,
+    SwitchArticle,
+    last,
+    next
+  }) => {
     const { appStore } = useStore()
     const onScroll = () => {
       const activeItem = document.querySelector('.active') as HTMLElement
@@ -64,8 +77,10 @@ const ArticleLayout: FC<ArticleLayoutType & PropsWithChildren> = observer(
       }
     }, [])
     return (
-      <ArticleLayoutContextProvider value={{title,content,created,category,tags}}>
-        <div className='max-w-[48rem] mx-auto my-0'>
+      <ArticleLayoutContextProvider
+        value={{ title, content, created, category, tags,last,next }}
+      >
+        <div className="max-w-[48rem] mx-auto my-0">
           <m.main
             className="card-border px-8 py-4 relative"
             variants={ArticleMotion}
@@ -85,6 +100,8 @@ const ArticleLayout: FC<ArticleLayoutType & PropsWithChildren> = observer(
               </div>
             )}
           </m.main>
+
+          {SwitchArticle && <SwitchArticle />}
           {Comment && <Comment />}
         </div>
       </ArticleLayoutContextProvider>

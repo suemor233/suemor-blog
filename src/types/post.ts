@@ -1,5 +1,5 @@
 export interface PostsPaginateType extends PaginateType {
-  postList: postType[]
+  postList: postItemType[]
 }
 
 export interface PaginateType {
@@ -8,17 +8,30 @@ export interface PaginateType {
 }
 
 export interface postType {
-  _id: string
-  title: string
-  content: string
-  tags: string[]
-  category: categoryType
-  created: string
+  post: postItemType
+  last?: switchType
+  next?: switchType
+}
+
+export interface postItemType {
+
+    _id: string
+    title: string
+    content: string
+    tags: string[]
+    category: categoryType
+    created: string
+
 }
 
 export interface categoryType {
-  created:string
-  name:string
-  slug:string
-  _id:string
+  created: string
+  name: string
+  slug: string
+  _id: string
+}
+
+export interface switchType {
+  _id: string
+  title: string
 }

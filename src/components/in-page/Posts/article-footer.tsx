@@ -21,7 +21,7 @@ export const ArticleFooterAction = () => {
           创作共用保留署名-非商业-禁止演绎4.0国际许可证
         </a>
       </div>
-      <div className="flex  gap-3">
+      <div className="flex gap-3">
         <IconWrapper>
           <IoCalendarOutline />
           <time>{parseDate(article.created, 'YYYY-MM-DD')}</time>

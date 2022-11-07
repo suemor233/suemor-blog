@@ -13,13 +13,23 @@ const ArticleFooterActionLazy = dynamic(() =>
   ),
 )
 
+const SwitchArticleLazy = dynamic(() =>
+  import('~/components/in-page/Posts/switch-article').then(
+    (mo) => mo.SwitchArticle,
+  ),
+)
+
 const CommentLazy = dynamic(() =>
   import('~/components/in-page/Posts/comment').then((mo) => mo.Comment),
 )
 
 const PostView: NextPage<postType> = (posts) => {
-  const { title, created, category, tags, content } = posts
-
+  const {
+    post: { title, created, category, tags },
+    last,
+    next,
+    post,
+  } = posts
   return (
     <>
       <Seo
@@ -35,12 +45,11 @@ const PostView: NextPage<postType> = (posts) => {
         }}
       />
       <ArticleLayout
-        content={content}
-        title={title}
-        created={created}
-        category={category}
-        tags={tags}
+        {...post}
+        last={last}
+        next={next}
         Comment={() => <CommentLazy />}
+        SwitchArticle={() => <SwitchArticleLazy />}
       >
         <Markdown />
         <ArticleFooterActionLazy />

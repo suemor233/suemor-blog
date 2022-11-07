@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import { m } from 'framer-motion'
 import type { Variants } from 'framer-motion'
 import NextLink from 'next/link'
@@ -11,18 +12,20 @@ import {
 } from 'react-icons/io5'
 
 import Pagination from '~/components/universal/Pagination'
-import type { PostsPaginateType, postType } from '~/types/post'
+import type { PostsPaginateType, postItemType, postType } from '~/types/post'
 import { parseDate } from '~/utils/time'
-import clsx from 'clsx'
-
 
 interface ArticleListProps {
-  posts: PostsPaginateType,
-  fetchPostList: (page: number) => Promise<PostsPaginateType>,
-  path?:string
+  posts: PostsPaginateType
+  fetchPostList: (page: number) => Promise<PostsPaginateType>
+  path?: string
 }
 
-const ArticleList: FC<ArticleListProps> = ({ posts,fetchPostList,path = '' }) => {
+const ArticleList: FC<ArticleListProps> = ({
+  posts,
+  fetchPostList,
+  path = '',
+}) => {
   const [postList, setPostList] = useState<PostsPaginateType>(posts)
   const router = useRouter()
   const updatePostList = async (page: number) => {
@@ -35,7 +38,7 @@ const ArticleList: FC<ArticleListProps> = ({ posts,fetchPostList,path = '' }) =>
     })
   }
   useEffect(() => {
-      updatePostList(Number(router.query.page)  || 1)
+    updatePostList(Number(router.query.page) || 1)
   }, [router.query])
   if (postList.postList.length <= 0) {
     return <div className="h-screen">主人还没写过博客</div>
@@ -82,7 +85,7 @@ export const backdropMotion: Variants = {
   },
 }
 
-const Item: FC<Record<'post', postType>> = ({ post }) => {
+const Item: FC<Record<'post', postItemType>> = ({ post }) => {
   const { title, content, created, tags, category, _id } = post
   return (
     <m.article
@@ -105,21 +108,31 @@ const Item: FC<Record<'post', postType>> = ({ post }) => {
       <div className="mt-2 flex gap-3 text-blue-500 text-md flex-wrap">
         <IconWrapper>
           <IoTimeOutline className="mt-0.5" />
-          <NextLink href={'/archives'} className='hover:text-blue-700 hover:underline'>
+          <NextLink
+            href={'/archives'}
+            className="hover:text-blue-700 hover:underline"
+          >
             <time>{parseDate(created, 'YYYY-MM-DD')}</time>
           </NextLink>
         </IconWrapper>
 
         <IconWrapper>
           <IoBookmarkOutline className="mt-0.5" />
-          <NextLink href={`/categories/${category.slug}`} className='hover:text-blue-700 hover:underline'>
+          <NextLink
+            href={`/categories/${category.slug}`}
+            className="hover:text-blue-700 hover:underline"
+          >
             <span>{category.name}</span>
           </NextLink>
         </IconWrapper>
         <IconWrapper>
           <IoPricetagsOutline className="mt-0.5" />
           {tags.map((item, index) => (
-            <NextLink href={`/tags/${item}`} key={item} className='hover:text-blue-700 hover:underline'>
+            <NextLink
+              href={`/tags/${item}`}
+              key={item}
+              className="hover:text-blue-700 hover:underline"
+            >
               <span>
                 {index !== 0 && ' | '}
                 {item}
@@ -134,7 +147,11 @@ const Item: FC<Record<'post', postType>> = ({ post }) => {
 
 const IconWrapper: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className={clsx('flex items-center gap-1  transition-colors duration-300')}>
+    <div
+      className={clsx(
+        'flex items-center gap-1  transition-colors duration-300',
+      )}
+    >
       {children}
     </div>
   )
