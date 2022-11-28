@@ -81,7 +81,7 @@ const ArticleLayout: FC<ArticleLayoutType & PropsWithChildren> = observer(
       <ArticleLayoutContextProvider
         value={{ title, content, created, category, tags, last, next }}
       >
-        <div className="max-w-[48rem] mx-auto my-0">
+        <div className="max-w-[48rem] mx-auto my-0 px-2">
           <m.main
             className="card-border px-8 py-4 relative"
             variants={ArticleMotion}
