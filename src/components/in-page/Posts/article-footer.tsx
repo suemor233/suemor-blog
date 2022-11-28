@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren } from 'react'
+import type { FC, PropsWithChildren } from 'react'
 import { IoBookmarkOutline, IoCalendarOutline } from 'react-icons/io5'
 
 import { useArticleLayoutProps } from '~/components/layouts/ArticleLayout/hooks'

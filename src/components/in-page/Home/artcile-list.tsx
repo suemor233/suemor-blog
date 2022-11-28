@@ -12,7 +12,7 @@ import {
 } from 'react-icons/io5'
 
 import Pagination from '~/components/universal/Pagination'
-import type { PostsPaginateType, postItemType, postType } from '~/types/post'
+import type { PostsPaginateType, postItemType } from '~/types/post'
 import { parseDate } from '~/utils/time'
 
 interface ArticleListProps {

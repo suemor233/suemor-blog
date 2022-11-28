@@ -7,8 +7,9 @@ import { useEffect, useMemo } from 'react'
 import { IoTimeOutline } from 'react-icons/io5'
 
 import { Avatar } from '~/components/universal/Avatar'
+import { Comments } from '~/components/universal/comments'
 import { useStore } from '~/store'
-import { categoryType, switchType } from '~/types/post'
+import type { categoryType, switchType } from '~/types/post'
 import { parseDate } from '~/utils/time'
 
 import { ArticleLayoutContextProvider, useArticleLayoutProps } from './hooks'
@@ -23,8 +24,8 @@ export interface ArticleLayoutType {
   category?: categoryType
   Comment?: FC
   SwitchArticle?: FC
-  last?:switchType
-  next?:switchType
+  last?: switchType
+  next?: switchType
 }
 
 const ArticleMotion: Variants = {
@@ -53,7 +54,7 @@ const ArticleLayout: FC<ArticleLayoutType & PropsWithChildren> = observer(
     tags,
     SwitchArticle,
     last,
-    next
+    next,
   }) => {
     const { appStore } = useStore()
     const onScroll = () => {
@@ -78,7 +79,7 @@ const ArticleLayout: FC<ArticleLayoutType & PropsWithChildren> = observer(
     }, [])
     return (
       <ArticleLayoutContextProvider
-        value={{ title, content, created, category, tags,last,next }}
+        value={{ title, content, created, category, tags, last, next }}
       >
         <div className="max-w-[48rem] mx-auto my-0">
           <m.main
@@ -102,7 +103,9 @@ const ArticleLayout: FC<ArticleLayoutType & PropsWithChildren> = observer(
           </m.main>
 
           {SwitchArticle && <SwitchArticle />}
-          {Comment && <Comment />}
+          <div className="mt-5">
+            <Comments term={title} />
+          </div>
         </div>
       </ArticleLayoutContextProvider>
     )

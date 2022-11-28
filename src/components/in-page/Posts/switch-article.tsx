@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { AnchorHTMLAttributes, FC, PropsWithChildren } from 'react'
+import type { AnchorHTMLAttributes, FC, PropsWithChildren } from 'react'
 import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5'
 
 import { useArticleLayoutProps } from '~/components/layouts/ArticleLayout/hooks'
@@ -38,7 +38,7 @@ const SwitchButton: FC<PropsWithChildren<switchbuttontype>> = ({
   return (
     <Link
       href={href || ''}
-      className="text-xl text-blue-500 p-3 hover:bg-gray-100 rounded-xl transition-colors duration-300 flex items-center"
+      className="text-xl text-blue-500 p-2 hover:bg-gray-100 rounded-xl transition-colors duration-300 flex items-center"
     >
       {children}
     </Link>
