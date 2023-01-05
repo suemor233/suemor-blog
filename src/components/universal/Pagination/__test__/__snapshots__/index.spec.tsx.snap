@@ -1,0 +1,336 @@
+// Vitest Snapshot v1
+
+exports[`Pagination > pagination should be init correctly 1`] = `
+<button
+  aria-label="pagination"
+  class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black !bg-blue-500 text-white hover:bg-blue-500"
+>
+  1
+</button>
+`;
+
+exports[`Pagination > pagination snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <section
+        class="flex gap-2"
+      >
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M17.77 3.77L16 2 6 12l10 10 1.77-1.77L9.54 12z"
+            />
+          </svg>
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          1
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          2
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black !bg-blue-500 text-white hover:bg-blue-500"
+        >
+          3
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          4
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          5
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          ...
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          10
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M6.23 20.23L8 22l10-10L8 2 6.23 3.77 14.46 12z"
+            />
+          </svg>
+        </button>
+      </section>
+    </div>
+    <div />
+    <div>
+      <section
+        class="flex gap-2"
+      >
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black !bg-blue-500 text-white hover:bg-blue-500"
+        >
+          1
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          2
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          3
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          ...
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          10
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M6.23 20.23L8 22l10-10L8 2 6.23 3.77 14.46 12z"
+            />
+          </svg>
+        </button>
+      </section>
+    </div>
+    <div>
+      <section
+        class="flex gap-2"
+      >
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black !bg-blue-500 text-white hover:bg-blue-500"
+        >
+          1
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          2
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          3
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          ...
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          10
+        </button>
+        <button
+          aria-label="pagination"
+          class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+        >
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 0h24v24H0V0z"
+              fill="none"
+            />
+            <path
+              d="M6.23 20.23L8 22l10-10L8 2 6.23 3.77 14.46 12z"
+            />
+          </svg>
+        </button>
+      </section>
+    </div>
+  </body>,
+  "container": <div>
+    <section
+      class="flex gap-2"
+    >
+      <button
+        aria-label="pagination"
+        class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black !bg-blue-500 text-white hover:bg-blue-500"
+      >
+        1
+      </button>
+      <button
+        aria-label="pagination"
+        class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+      >
+        2
+      </button>
+      <button
+        aria-label="pagination"
+        class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+      >
+        3
+      </button>
+      <button
+        aria-label="pagination"
+        class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+      >
+        ...
+      </button>
+      <button
+        aria-label="pagination"
+        class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+      >
+        10
+      </button>
+      <button
+        aria-label="pagination"
+        class="bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black"
+      >
+        <svg
+          fill="currentColor"
+          height="1em"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M6.23 20.23L8 22l10-10L8 2 6.23 3.77 14.46 12z"
+          />
+        </svg>
+      </button>
+    </section>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

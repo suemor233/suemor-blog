@@ -1,13 +1,13 @@
 import clsx from 'clsx'
-import { useRouter } from 'next/router';
-import type { FC, HTMLProps, PropsWithChildren} from 'react';
-import { useEffect , memo , useMemo, useState } from 'react';
+import { useRouter } from 'next/router'
+import type { FC, HTMLProps, PropsWithChildren } from 'react'
+import { memo, useEffect, useMemo, useState } from 'react'
 import {
   MdOutlineArrowBackIosNew,
   MdOutlineArrowForwardIos,
 } from 'react-icons/md'
 
-interface PaginationProps {
+export interface PaginationProps {
   total: number
   initialPage: number
   onChange?: (page: number) => void
@@ -18,8 +18,8 @@ const Pagination: FC<PaginationProps> = (props) => {
   const [currentPage, setCurrentPage] = useState(initialPage)
   const router = useRouter()
   useEffect(() => {
-    !router.query.page && setCurrentPage(initialPage)
-}, [router.query])
+    !router?.query.page && setCurrentPage(initialPage)
+  }, [router?.query])
   const paginationCenter = useMemo(() => {
     const front = () => {
       const arr: number[] = []
@@ -96,7 +96,6 @@ const Pagination: FC<PaginationProps> = (props) => {
           className={clsx(
             item === currentPage && '!bg-blue-500 text-white hover:bg-blue-500',
           )}
-          canSelect={typeof item !== 'string'}
         >
           {item}
         </Button>
@@ -110,21 +109,19 @@ const Pagination: FC<PaginationProps> = (props) => {
   )
 }
 
-const Button: FC<
-  PropsWithChildren & HTMLProps<HTMLButtonElement> & { canSelect?: boolean }
-> = ({ children, onClick, className, canSelect = true }) => {
+const Button: FC<PropsWithChildren & HTMLProps<HTMLButtonElement>> = ({
+  children,
+  onClick,
+  className,
+}) => {
   return (
     <button
-      className={
-        canSelect
-          ? clsx(
-              'bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black',
-              className,
-            )
-          : 'flex items-end px-1 mb-0.5 dark:bg-black'
-      }
+      className={clsx(
+        'bg-gray-100 h-9 w-9 rounded-md hover:bg-gray-200 flex justify-center items-center cursor-pointer dark:bg-black',
+        className,
+      )}
       onClick={onClick}
-      aria-label='分页'
+      aria-label="pagination"
     >
       {children}
     </button>
