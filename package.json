@@ -47,7 +47,7 @@
     "release": "vv",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "test:pdateSnap": "vitest -u"
+    "test:updateSnap": "vitest -u"
   },
   "dependencies": {
     "@giscus/react": "^2.2.4",
