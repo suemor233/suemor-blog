@@ -21,7 +21,7 @@ specifiers:
   dayjs: ^1.11.5
   dotenv: ^16.0.2
   eslint: 8.23.0
-  eslint-config-next: 12.3.0
+  eslint-config-next: 12.3.4
   framer-motion: ^7.3.5
   happy-dom: ^8.1.2
   husky: ^8.0.3
@@ -98,7 +98,7 @@ devDependencies:
   cz-git: 1.4.1
   dotenv: 16.0.2
   eslint: 8.23.0
-  eslint-config-next: 12.3.0_nwctkcr5uyxf47tw7zkgamxmfq
+  eslint-config-next: 12.3.4_nwctkcr5uyxf47tw7zkgamxmfq
   happy-dom: 8.1.2
   husky: 8.0.3
   jsdom: 20.0.3
@@ -998,7 +998,7 @@ packages:
       '@babel/generator': 7.20.7
       '@babel/parser': 7.20.7
       '@babel/traverse': 7.20.12
-      '@babel/types': 7.19.0
+      '@babel/types': 7.20.7
       javascript-natural-sort: 0.7.1
       lodash.clone: 4.5.0
       lodash.isequal: 4.5.0
@@ -1142,8 +1142,8 @@ packages:
     resolution: {integrity: sha512-H/69Lc5Q02dq3o+dxxy5O/oNxFsZpdL6WREtOOtOM1B/weonIwDXkekr1KV5DPVPr12IHFPrMrcJQ6bgPMfn7A==}
     dev: false
 
-  /@next/eslint-plugin-next/12.3.0:
-    resolution: {integrity: sha512-jVdq1qYTNDjUtulnE8/hkPv0pHILV4jMg5La99iaY/FFm20WxVnsAZtbNnMvlPbf8dc010oO304SX9yXbg5PAw==}
+  /@next/eslint-plugin-next/12.3.4:
+    resolution: {integrity: sha512-BFwj8ykJY+zc1/jWANsDprDIu2MgwPOIKxNVnrKvPs+f5TPegrVnem8uScND+1veT4B7F6VeqgaNLFW1Hzl9Og==}
     dependencies:
       glob: 7.1.7
     dev: true
@@ -2869,8 +2869,8 @@ packages:
       source-map: 0.6.1
     dev: true
 
-  /eslint-config-next/12.3.0_nwctkcr5uyxf47tw7zkgamxmfq:
-    resolution: {integrity: sha512-guHSkNyKnTBB8HU35COgAMeMV0E026BiYRYvyEVVaTOeFcnU3i1EI8/Da0Rl7H3Sgua5FEvoA0vYd2s8kdIUXg==}
+  /eslint-config-next/12.3.4_nwctkcr5uyxf47tw7zkgamxmfq:
+    resolution: {integrity: sha512-WuT3gvgi7Bwz00AOmKGhOeqnyA5P29Cdyr0iVjLyfDbk+FANQKcOjFUTZIdyYfe5Tq1x4TGcmoe4CwctGvFjHQ==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
       typescript: '>=3.3.1'
@@ -2878,7 +2878,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@next/eslint-plugin-next': 12.3.0
+      '@next/eslint-plugin-next': 12.3.4
       '@rushstack/eslint-patch': 1.1.4
       '@typescript-eslint/parser': 5.48.0_nwctkcr5uyxf47tw7zkgamxmfq
       eslint: 8.23.0
@@ -4379,12 +4379,6 @@ packages:
       minimist: 1.2.6
     dev: true
 
-  /json5/2.2.1:
-    resolution: {integrity: sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==}
-    engines: {node: '>=6'}
-    hasBin: true
-    dev: true
-
   /json5/2.2.3:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
@@ -4540,7 +4534,7 @@ packages:
     dependencies:
       big.js: 5.2.2
       emojis-list: 3.0.0
-      json5: 2.2.1
+      json5: 2.2.3
     dev: true
 
   /local-pkg/0.4.2:
