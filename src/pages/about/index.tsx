@@ -7,17 +7,18 @@ import Markdown from '~/components/universal/Markdown'
 
 import type { PagePostType } from '../../api/modules/page'
 import { SEO } from '../../components/biz/Seo/index'
+
 const CommentLazy = dynamic(() =>
   import('~/components/in-page/Posts/comment').then((mo) => mo.Comment),
 )
 
 const AboutView: NextPage<Record<'data', PagePostType>> = (about) => {
-
   if (!about.data) {
-    return <div className='flex justify-center'>
-      <h1 className='text-4xl'>请先创建页面</h1>
-        
-    </div>
+    return (
+      <div className="flex justify-center">
+        <h1 className="text-4xl">请先创建页面</h1>
+      </div>
+    )
   }
   const { content, title, created } = about.data
   return (
@@ -31,7 +32,12 @@ const AboutView: NextPage<Record<'data', PagePostType>> = (about) => {
           },
         }}
       />
-      <ArticleLayout content={content} title={title} created={created}  Comment={() => <CommentLazy />}>
+      <ArticleLayout
+        content={content}
+        title={title}
+        created={created}
+        Comment={() => <CommentLazy />}
+      >
         <Markdown />
       </ArticleLayout>
     </>
@@ -41,7 +47,7 @@ const AboutView: NextPage<Record<'data', PagePostType>> = (about) => {
 AboutView.getInitialProps = async () => {
   const about = await getPageBySlug('about')
   return {
-    data:about
+    data: about,
   }
 }
 

@@ -1,16 +1,49 @@
 {
   "name": "suemor-blog",
   "version": "0.3.1",
+  "author": "suemor <suemor233@outlook.com>",
+  "description": "suemor blog",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/suemor233/suemor-blog/issues"
+  },
+  "homepage": "https://github.com/suemor233/suemor-blog#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suemor233/suemor-blog.git"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,tsx,ts}": [
+      "npm run lint"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git",
+      "useEmoji": true
+    }
+  },
+  "bump": {
+    "leading": [
+      "npm run build"
+    ],
+    "publish": false,
+    "tag": true,
+    "commit_message": "chore(release): bump @suemor/suemor-cli to v${NEW_VERSION}"
+  },
   "scripts": {
+    "prepare": "husky install",
     "dev": "cross-env NODE_ENV=development next dev -p 3477",
     "analyze": "cross-env NODE_ENV=production ANALYZE=true BUNDLE_ANALYZE=browser next build",
     "build": "cross-env NODE_ENV=production next build",
     "start": "npm run dev",
-    "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore . --fix",
+    "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore .",
+    "lint:fix": "eslint --ext .ts,.tsx --ignore-path .gitignore . --fix",
     "prod:pm2": "cross-env NODE_ENV=production pm2 restart ecosystem.config.js",
     "prod:pm2-alone": "cross-env NODE_ENV=production pm2 restart ecosystem.standalone.config.js",
     "prod:stop": "pm2 stop ecosystem.config.js",
-    "prod:reload": "pm2 reload ecosystem.config.js"
+    "prod:reload": "pm2 reload ecosystem.config.js",
+    "release": "vv"
   },
   "dependencies": {
     "@giscus/react": "^2.2.4",
@@ -39,15 +72,22 @@
     "umi-request": "^1.4.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.0",
+    "@commitlint/config-conventional": "^17.4.0",
+    "@innei/bump-version": "^1.5.5",
     "@next/bundle-analyzer": "^12.3.0",
-    "@suemor/eslint-config-react-ts": "^1.0.1",
-    "@suemor/prettier": "^1.0.1",
+    "@suemor/eslint-config-react-ts": "1.1.0",
+    "@suemor/prettier": "1.1.0",
     "@types/node": "18.7.16",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.6",
+    "commitlint": "^17.4.0",
+    "cz-git": "^1.4.1",
     "dotenv": "^16.0.2",
     "eslint": "8.23.0",
     "eslint-config-next": "12.3.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
     "next-compose-plugins": "^2.2.1",
     "postcss": "^8.4.16",
     "postcss-import": "^15.0.0",

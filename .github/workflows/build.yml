@@ -46,6 +46,6 @@ jobs:
           run_install: true
       - name: Build project
         run: |
-          yarn build
+          pnpm build
         env:
           CI: true
