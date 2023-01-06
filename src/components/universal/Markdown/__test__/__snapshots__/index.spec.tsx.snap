@@ -1,0 +1,1293 @@
+// Vitest Snapshot v1
+
+exports[`Markdown > markdown render 1`] = `
+<div>
+  <div
+    class="markdown-body"
+  >
+    <blockquote>
+      
+
+      <p>
+        影响大众想象力的，并不是事实本身，而是它扩散和传播的方式。
+      </p>
+      
+
+    </blockquote>
+    
+
+    <p>
+      ↑ 引用
+    </p>
+    
+
+    <h1>
+      Test 文本
+    </h1>
+    
+
+    <blockquote>
+      
+
+      <p>
+        影响大众想象力的，并不是事实本身，而是它扩散和传播的方式。
+      </p>
+      
+
+    </blockquote>
+    
+
+    <h1>
+      一级
+    </h1>
+    
+
+    <p>
+      我与父亲不相见已二年余了，我最不能忘记的是他的背影。
+    </p>
+    
+
+    <p>
+      那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子。我从北京到徐州，打算跟着父亲奔丧回家。到徐州见着父亲，看见满院狼藉的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说：“事已如此，不必难过，好在天无绝人之路！”
+    </p>
+    
+
+    <h2>
+      二级
+    </h2>
+    
+
+    <p>
+      回家变卖典质，父亲还了亏空；又借钱办了丧事。这些日子，家中光景很是惨澹，一半为了丧事，一半为了父亲赋闲。丧事完毕，父亲要到南京谋事，我也要回北京念书，我们便同行。
+    </p>
+    
+
+    <p>
+      到南京时，有朋友约去游逛，勾留了一日；第二日上午便须渡江到浦口，下午上车北去。父亲因为事忙，本已说定不送我，叫旅馆里一个熟识的茶房陪我同去。他再三嘱咐茶房，甚是仔细。但他终于不放心，怕茶房不妥帖；颇踌躇了一会。其实我那年已二十岁，北京已来往过两三次，是没有什么要紧的了。他踌躇了一会，终于决定还是自己送我去。我再三劝他不必去；他只说：“不要紧，他们去不好！”
+    </p>
+    
+
+    <h3>
+      三级
+    </h3>
+    
+
+    <blockquote>
+      
+
+      <p>
+        影响大众想象力的，并不是事实本身，而是它扩散和传播的方式。
+      </p>
+      
+
+    </blockquote>
+    
+
+    <h4>
+      四级
+    </h4>
+    
+
+    <p>
+      \`code: \`
+    </p>
+    
+
+    <pre />
+    
+
+    <p>
+      || 你知道的太多了 || spoiler || 你知道的太多了 ||
+    </p>
+    
+
+    <p>
+      <a
+        href="https://baidu.com"
+      >
+        链接
+      </a>
+    </p>
+    
+
+    <p>
+      <img
+        alt="!图片描述"
+        src="https://gitee.com/xun7788/my-imagination/raw/master/uPic/1615516941397.jpg"
+      />
+    </p>
+    
+
+    <p>
+      ↑ 图片描述
+    </p>
+    
+
+    <p>
+      <strong>
+        加粗: 歌词
+      </strong>
+    </p>
+    
+
+    <p>
+      <del>
+        dele
+      </del>
+       删除
+    </p>
+    
+
+    <pre />
+    
+
+    <p>
+      GH Mention: (GH@Innei)
+    </p>
+    
+
+    <blockquote>
+      
+
+      <p>
+        <em>
+          夕暮れ
+        </em>
+      </p>
+      
+
+      <p>
+        作詞：甲本ヒロト
+作曲：甲本ヒロト
+      </p>
+      
+
+      <p>
+        はっきりさせなくてもいい
+        <br />
+        
+あやふやなまんまでいい
+        <br />
+        
+僕達はなんなとなく幸せになるんだ
+      </p>
+      
+
+      <p>
+        何年たってもいい　遠く離れてもいい
+        <br />
+        
+独りぼっちじゃないぜウィンクするぜ
+      </p>
+      
+
+      <p>
+        夕暮れが僕のドアをノックする頃に
+        <br />
+        
+あなたを「ギュッ」と抱きたくなってる
+        <br />
+        
+幻なんかじゃない　人生は夢じゃない
+        <br />
+        
+僕達ははっきりと生きてるんだ
+        <br />
+        
+夕焼け空は赤い　炎のように赤い
+        <br />
+        
+この星の半分を真っ赤に染めた
+        <br />
+        
+それよりももっと赤い血が
+        <br />
+        
+体中を流れてるんだぜ
+        <br />
+        
+夕暮れが僕のドアをノックする頃に
+      </p>
+      
+
+      <p>
+        あなたを「ギュッ」と抱きたくなってる
+        <br />
+        
+幻なんかじゃない　人生は夢じゃない
+        <br />
+        
+僕達ははっきりと生きてるんだ
+      </p>
+      
+
+      <p>
+        夕焼け空は赤い　炎のように赤い
+        <br />
+        
+この星の半分を真っ赤に染めた
+      </p>
+      
+
+      <p>
+        それよりももっと赤い血が
+        <br />
+        
+体中を流れてるんだぜ
+        <br />
+        
+体中を流れてるんだぜ
+        <br />
+        
+体中を流れてるんだぜ
+      </p>
+      
+
+    </blockquote>
+    
+
+    <hr />
+    
+
+    <p>
+      <strong>
+        Advertisement :)
+      </strong>
+    </p>
+    
+
+    <ul>
+      
+
+      <li>
+        <strong>
+          <a
+            href="https://nodeca.github.io/pica/demo/"
+          >
+            pica
+          </a>
+        </strong>
+         - high quality and fast image
+resize in browser.
+      </li>
+      
+
+      <li>
+        <strong>
+          <a
+            href="https://github.com/nodeca/babelfish/"
+          >
+            babelfish
+          </a>
+        </strong>
+         - developer friendly
+i18n with plurals support and easy syntax.
+      </li>
+      
+
+    </ul>
+    
+
+    <p>
+      You will like those projects!
+    </p>
+    
+
+    <hr />
+    
+
+    <h1>
+      h1 Heading 8-)
+    </h1>
+    
+
+    <h2>
+      h2 Heading
+    </h2>
+    
+
+    <h3>
+      h3 Heading
+    </h3>
+    
+
+    <h4>
+      h4 Heading
+    </h4>
+    
+
+    <h5>
+      h5 Heading
+    </h5>
+    
+
+    <h6>
+      h6 Heading
+    </h6>
+    
+
+    <h2>
+      Horizontal Rules
+    </h2>
+    
+
+    <hr />
+    
+
+    <hr />
+    
+
+    <hr />
+    
+
+    <h2>
+      Typographic replacements
+    </h2>
+    
+
+    <p>
+      Enable typographer option to see result.
+    </p>
+    
+
+    <p>
+      (c) (C) (r) (R) (tm) (TM) (p) (P) +-
+    </p>
+    
+
+    <p>
+      test.. test... test..... test?..... test!....
+    </p>
+    
+
+    <p>
+      !!!!!! ???? ,,  -- ---
+    </p>
+    
+
+    <p>
+      "Smartypants, double quotes" and 'single quotes'
+    </p>
+    
+
+    <h2>
+      Emphasis
+    </h2>
+    
+
+    <p>
+      <strong>
+        This is bold text
+      </strong>
+    </p>
+    
+
+    <p>
+      <strong>
+        This is bold text
+      </strong>
+    </p>
+    
+
+    <p>
+      <em>
+        This is italic text
+      </em>
+    </p>
+    
+
+    <p>
+      <em>
+        This is italic text
+      </em>
+    </p>
+    
+
+    <p>
+      <del>
+        Strikethrough
+      </del>
+    </p>
+    
+
+    <h2>
+      Blockquotes
+    </h2>
+    
+
+    <blockquote>
+      
+
+      <p>
+        Blockquotes can also be nested...
+      </p>
+      
+
+      <blockquote>
+        
+
+        <p>
+          ...by using additional greater-than signs right next to each other...
+        </p>
+        
+
+        <blockquote>
+          
+
+          <p>
+            ...or with spaces between arrows.
+          </p>
+          
+
+        </blockquote>
+        
+
+      </blockquote>
+      
+
+    </blockquote>
+    
+
+    <h2>
+      Lists
+    </h2>
+    
+
+    <p>
+      Unordered
+    </p>
+    
+
+    <ul>
+      
+
+      <li>
+        Create a list by starting a line with 
+        <code
+          node="[object Object]"
+        >
+          +
+        </code>
+        , 
+        <code
+          node="[object Object]"
+        >
+          -
+        </code>
+        , or 
+        <code
+          node="[object Object]"
+        >
+          *
+        </code>
+      </li>
+      
+
+      <li>
+        Sub-lists are made by indenting 2 spaces:
+
+        <ul>
+          
+
+          <li>
+            Marker character change forces new list start:
+
+            <ul>
+              
+
+              <li>
+                Ac tristique libero volutpat at
+              </li>
+              
+
+            </ul>
+            
+
+            <ul>
+              
+
+              <li>
+                Facilisis in pretium nisl aliquet
+              </li>
+              
+
+            </ul>
+            
+
+            <ul>
+              
+
+              <li>
+                Nulla volutpat aliquam velit
+              </li>
+              
+
+            </ul>
+            
+
+          </li>
+          
+
+        </ul>
+        
+
+      </li>
+      
+
+      <li>
+        Very easy!
+      </li>
+      
+
+    </ul>
+    
+
+    <p>
+      Ordered
+    </p>
+    
+
+    <ol>
+      
+
+      <li>
+        
+
+        <p>
+          Lorem ipsum dolor sit amet
+        </p>
+        
+
+      </li>
+      
+
+      <li>
+        
+
+        <p>
+          Consectetur adipiscing elit
+        </p>
+        
+
+      </li>
+      
+
+      <li>
+        
+
+        <p>
+          Integer molestie lorem at massa
+        </p>
+        
+
+      </li>
+      
+
+      <li>
+        
+
+        <p>
+          You can use sequential numbers...
+        </p>
+        
+
+      </li>
+      
+
+      <li>
+        
+
+        <p>
+          ...or keep all the numbers as 
+          <code
+            node="[object Object]"
+          >
+            1.
+          </code>
+        </p>
+        
+
+      </li>
+      
+
+    </ol>
+    
+
+    <p>
+      Start numbering with offset:
+    </p>
+    
+
+    <ol
+      start="57"
+    >
+      
+
+      <li>
+        foo
+      </li>
+      
+
+      <li>
+        bar
+      </li>
+      
+
+    </ol>
+    
+
+    <h2>
+      Code
+    </h2>
+    
+
+    <p>
+      Inline 
+      <code
+        node="[object Object]"
+      >
+        code
+      </code>
+    </p>
+    
+
+    <p>
+      Indented code
+    </p>
+    
+
+    <pre>
+      <code
+        node="[object Object]"
+      >
+        // Some comments
+line 1 of code
+line 2 of code
+line 3 of code
+
+      </code>
+    </pre>
+    
+
+    <p>
+      Block code "fences"
+    </p>
+    
+
+    <pre>
+      <code
+        node="[object Object]"
+      >
+        Sample text here...
+
+      </code>
+    </pre>
+    
+
+    <p>
+      Syntax highlighting
+    </p>
+    
+
+    <pre />
+    
+
+    <h2>
+      Tables
+    </h2>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <table>
+      <thead>
+        <tr>
+          <th>
+            Option
+          </th>
+          <th>
+            Description
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            data
+          </td>
+          <td>
+            path to data files to supply the data that will be passed into templates.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            engine
+          </td>
+          <td>
+            engine to be used for processing templates. Handlebars is the default.
+          </td>
+        </tr>
+        <tr>
+          <td>
+            ext
+          </td>
+          <td>
+            extension to be used for dest files.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+
+    <p>
+      Right aligned columns
+    </p>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <table>
+      <thead>
+        <tr>
+          <th
+            style="text-align: right;"
+          >
+            Option
+          </th>
+          <th
+            style="text-align: right;"
+          >
+            Description
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            style="text-align: right;"
+          >
+            data
+          </td>
+          <td
+            style="text-align: right;"
+          >
+            path to data files to supply the data that will be passed into templates.
+          </td>
+        </tr>
+        <tr>
+          <td
+            style="text-align: right;"
+          >
+            engine
+          </td>
+          <td
+            style="text-align: right;"
+          >
+            engine to be used for processing templates. Handlebars is the default.
+          </td>
+        </tr>
+        <tr>
+          <td
+            style="text-align: right;"
+          >
+            ext
+          </td>
+          <td
+            style="text-align: right;"
+          >
+            extension to be used for dest files.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+
+    <h2>
+      Links
+    </h2>
+    
+
+    <p>
+      <a
+        href="http://dev.nodeca.com"
+      >
+        link text
+      </a>
+    </p>
+    
+
+    <p>
+      <a
+        href="http://nodeca.github.io/pica/demo/"
+        title="title text!"
+      >
+        link with title
+      </a>
+    </p>
+    
+
+    <p>
+      Autoconverted link 
+      <a
+        href="https://github.com/nodeca/pica"
+      >
+        https://github.com/nodeca/pica
+      </a>
+       (enable linkify to see)
+    </p>
+    
+
+    <h2>
+      Images
+    </h2>
+    
+
+    <p>
+      <img
+        alt="Minion"
+        src="https://octodex.github.com/images/minion.png"
+      />
+      
+
+      <img
+        alt="Stormtroopocat"
+        src="https://octodex.github.com/images/stormtroopocat.jpg"
+        title="The Stormtroopocat"
+      />
+    </p>
+    
+
+    <p>
+      Like links, Images also have a footnote style syntax
+    </p>
+    
+
+    <p>
+      <img
+        alt="Alt text"
+        src="https://octodex.github.com/images/dojocat.jpg"
+        title="The Dojocat"
+      />
+    </p>
+    
+
+    <p>
+      With a reference later in the document defining the URL location:
+    </p>
+    
+
+    <h2>
+      Plugins
+    </h2>
+    
+
+    <p>
+      The killer feature of 
+      <code
+        node="[object Object]"
+      >
+        markdown-it
+      </code>
+       is very effective support of
+
+      <a
+        href="https://www.npmjs.org/browse/keyword/markdown-it-plugin"
+      >
+        syntax plugins
+      </a>
+      .
+    </p>
+    
+
+    <h3>
+      <a
+        href="https://github.com/markdown-it/markdown-it-emoji"
+      >
+        Emojies
+      </a>
+    </h3>
+    
+
+    <blockquote>
+      
+
+      <p>
+        Classic markup: :wink: :crush: :cry: :tear: :laughing: :yum:
+      </p>
+      
+
+      <p>
+        Shortcuts (emoticons): :-) :-( 8-) ;)
+      </p>
+      
+
+    </blockquote>
+    
+
+    <p>
+      see 
+      <a
+        href="https://github.com/markdown-it/markdown-it-emoji#change-output"
+      >
+        how to change output
+      </a>
+       with twemoji.
+    </p>
+    
+
+    <h3>
+      <a
+        href="https://github.com/markdown-it/markdown-it-sub"
+      >
+        Subscript
+      </a>
+       / 
+      <a
+        href="https://github.com/markdown-it/markdown-it-sup"
+      >
+        Superscript
+      </a>
+    </h3>
+    
+
+    <ul>
+      
+
+      <li>
+        19^th^
+      </li>
+      
+
+      <li>
+        H
+        <del>
+          2
+        </del>
+        O
+      </li>
+      
+
+    </ul>
+    
+
+    <h3>
+      <a
+        href="https://github.com/markdown-it/markdown-it-ins"
+      >
+        &lt;ins&gt;
+      </a>
+    </h3>
+    
+
+    <p>
+      ++Inserted text++
+    </p>
+    
+
+    <h3>
+      <a
+        href="https://github.com/markdown-it/markdown-it-mark"
+      >
+        &lt;mark&gt;
+      </a>
+    </h3>
+    
+
+    <p>
+      ==Marked text==
+    </p>
+    
+
+    <h3>
+      <a
+        href="https://github.com/markdown-it/markdown-it-footnote"
+      >
+        Footnotes
+      </a>
+    </h3>
+    
+
+    <p>
+      Footnote 1 link
+      <sup>
+        <a
+          aria-describedby="footnote-label"
+          data-footnote-ref=""
+          href="#user-content-fn-first"
+          id="user-content-fnref-first"
+        >
+          1
+        </a>
+      </sup>
+      .
+    </p>
+    
+
+    <p>
+      Footnote 2 link
+      <sup>
+        <a
+          aria-describedby="footnote-label"
+          data-footnote-ref=""
+          href="#user-content-fn-second"
+          id="user-content-fnref-second"
+        >
+          2
+        </a>
+      </sup>
+      .
+    </p>
+    
+
+    <p>
+      Inline footnote^[Text of inline footnote] definition.
+    </p>
+    
+
+    <p>
+      Duplicated footnote reference
+      <sup>
+        <a
+          aria-describedby="footnote-label"
+          data-footnote-ref=""
+          href="#user-content-fn-second"
+          id="user-content-fnref-second-2"
+        >
+          2
+        </a>
+      </sup>
+      .
+    </p>
+    
+
+    <h3>
+      <a
+        href="https://github.com/markdown-it/markdown-it-deflist"
+      >
+        Definition lists
+      </a>
+    </h3>
+    
+
+    <p>
+      Term 1
+    </p>
+    
+
+    <p>
+      :   Definition 1
+with lazy continuation.
+    </p>
+    
+
+    <p>
+      Term 2 with 
+      <em>
+        inline markup
+      </em>
+    </p>
+    
+
+    <p>
+      :   Definition 2
+    </p>
+    
+
+    <pre>
+      <code
+        node="[object Object]"
+      >
+            { some code, part of Definition 2 }
+
+Third paragraph of definition 2.
+
+      </code>
+    </pre>
+    
+
+    <p>
+      <em>
+        Compact style:
+      </em>
+    </p>
+    
+
+    <p>
+      Term 1
+~ Definition 1
+    </p>
+    
+
+    <p>
+      Term 2
+~ Definition 2a
+~ Definition 2b
+    </p>
+    
+
+    <h3>
+      <a
+        href="https://github.com/markdown-it/markdown-it-abbr"
+      >
+        Abbreviations
+      </a>
+    </h3>
+    
+
+    <p>
+      This is HTML abbreviation example.
+    </p>
+    
+
+    <p>
+      It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
+    </p>
+    
+
+    <p>
+      *[HTML]: Hyper Text Markup Language
+    </p>
+    
+
+    <h3>
+      <a
+        href="https://github.com/markdown-it/markdown-it-container"
+      >
+        Custom containers
+      </a>
+    </h3>
+    
+
+    <p>
+      ::: warning
+
+      <em>
+        here be dragons
+      </em>
+      
+:::
+    </p>
+    
+
+    <section
+      class="footnotes"
+      data-footnotes=""
+    >
+      <h2
+        class="sr-only"
+        id="footnote-label"
+      >
+        Footnotes
+      </h2>
+      
+
+      <ol>
+        
+
+        <li
+          id="user-content-fn-first"
+        >
+          
+
+          <p>
+            Footnote 
+            <strong>
+              can have markup
+            </strong>
+          </p>
+          
+
+          <p>
+            and multiple paragraphs. 
+            <a
+              aria-label="Back to content"
+              class="data-footnote-backref"
+              data-footnote-backref=""
+              href="#user-content-fnref-first"
+            >
+              ↩
+            </a>
+          </p>
+          
+
+        </li>
+        
+
+        <li
+          id="user-content-fn-second"
+        >
+          
+
+          <p>
+            Footnote text. 
+            <a
+              aria-label="Back to content"
+              class="data-footnote-backref"
+              data-footnote-backref=""
+              href="#user-content-fnref-second"
+            >
+              ↩
+            </a>
+             
+            <a
+              aria-label="Back to content"
+              class="data-footnote-backref"
+              data-footnote-backref=""
+              href="#user-content-fnref-second-2"
+            >
+              ↩
+              <sup>
+                2
+              </sup>
+            </a>
+          </p>
+          
+
+        </li>
+        
+
+      </ol>
+      
+
+    </section>
+  </div>
+</div>
+`;

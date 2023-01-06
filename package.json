@@ -30,7 +30,7 @@
     ],
     "publish": false,
     "tag": true,
-    "commit_message": "chore(release): bump @suemor/suemor-cli to v${NEW_VERSION}"
+    "commit_message": "chore(release): bump @suemor/suemor-blog to v${NEW_VERSION}"
   },
   "scripts": {
     "prepare": "husky install",
@@ -52,7 +52,6 @@
   "dependencies": {
     "@giscus/react": "^2.2.4",
     "clsx": "^1.2.1",
-    "copy-to-clipboard": "^3.3.2",
     "cross-env": "^7.0.3",
     "dayjs": "^1.11.5",
     "framer-motion": "^7.3.5",

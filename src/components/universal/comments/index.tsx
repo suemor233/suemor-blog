@@ -3,7 +3,7 @@ import type { FC } from 'react'
 import Giscus from '@giscus/react'
 import { useColorMode } from '../../../hooks/use-color-mode';
 
-export const Comments: FC<{ term: string }> = ({ term }) => {
+export const Comments: FC<{ term?: string }> = ({ term }) => {
   const {isDark} = useColorMode()
   return (
     <Giscus

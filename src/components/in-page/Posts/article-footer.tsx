@@ -24,7 +24,7 @@ export const ArticleFooterAction = () => {
       <div className="flex gap-3">
         <IconWrapper>
           <IoCalendarOutline />
-          <time>{parseDate(article.created, 'YYYY-MM-DD')}</time>
+          <time>{parseDate(article.created || '', 'YYYY-MM-DD')}</time>
         </IconWrapper>
 
         <IconWrapper>

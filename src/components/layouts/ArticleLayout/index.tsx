@@ -17,9 +17,9 @@ import { ArticleLayoutContextProvider, useArticleLayoutProps } from './hooks'
 const NAVBAR_MIDDLE = 250
 
 export interface ArticleLayoutType {
-  title: string
-  content: string
-  created: string
+  title?: string
+  content?: string
+  created?: string
   tags?: string[]
   category?: categoryType
   Comment?: FC
@@ -127,10 +127,10 @@ const ArticleTitle = () => {
 
       <h1 className="text-4xl font-ui phone:text-2xl">{title}</h1>
       <div className="flex text-lg text-gray-500 item-center gap-5">
-        <time className="">{parseDate(created, 'YYYY-MM-DD dddd')}</time>
+        <time className="">{parseDate(created || '', 'YYYY-MM-DD dddd')}</time>
         <div className="flex items-center gap-1">
           <IoTimeOutline className="mt-0.5" />
-          <p>{useMemo(() => Math.round(content.length / 400), [])}m</p>
+          <p>{useMemo(() => Math.round(content!.length / 400), [])}m</p>
         </div>
       </div>
     </header>
