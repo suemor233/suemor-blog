@@ -36,7 +36,7 @@ specifiers:
   next-themes: ^0.2.1
   postcss: ^8.4.16
   postcss-import: ^15.0.0
-  postcss-nested: ^5.0.6
+  postcss-nested: ^6.0.0
   postcss-preset-env: ^7.8.1
   randomcolor: ^0.6.2
   react: 18.2.0
@@ -104,7 +104,7 @@ devDependencies:
   next-compose-plugins: 2.2.1
   postcss: 8.4.16
   postcss-import: 15.0.0_postcss@8.4.16
-  postcss-nested: 5.0.6_postcss@8.4.16
+  postcss-nested: 6.0.0_postcss@8.4.16
   postcss-preset-env: 7.8.1_postcss@8.4.16
   typescript: 4.8.4
   vite: 4.0.4_@types+node@18.7.16
@@ -291,7 +291,7 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
-      '@babel/types': 7.19.0
+      '@babel/types': 7.20.7
     dev: true
 
   /@babel/plugin-transform-react-jsx-self/7.18.6_@babel+core@7.20.12:
@@ -353,15 +353,6 @@ packages:
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@babel/types/7.19.0:
-    resolution: {integrity: sha512-YuGopBq3ke25BVSiS6fgF49Ul9gH1x70Bcr6bqRLjWCkcX8Hre1/5+z+IiWOIerRMSSEfGZVB9z9kyq7wVs9YA==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/helper-string-parser': 7.19.4
-      '@babel/helper-validator-identifier': 7.19.1
-      to-fast-properties: 2.0.0
     dev: true
 
   /@babel/types/7.20.7:
@@ -5909,8 +5900,8 @@ packages:
       postcss: 8.4.16
     dev: true
 
-  /postcss-nested/5.0.6_postcss@8.4.16:
-    resolution: {integrity: sha512-rKqm2Fk0KbA8Vt3AdGN0FB9OBOMDVajMG6ZCf/GoHgdxUJ4sBFp0A/uMIRm+MJUdo33YXEtjqIz8u7DAp8B7DA==}
+  /postcss-nested/6.0.0_postcss@8.4.16:
+    resolution: {integrity: sha512-0DkamqrPcmkBDsLn+vQDIrtkSbNkv5AD/M322ySo9kqFkCIYklym2xEmWkwo+Y3/qZo34tzEPNUw4y7yMCdv5w==}
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.2.14
