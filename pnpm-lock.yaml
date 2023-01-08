@@ -24,7 +24,7 @@ specifiers:
   framer-motion: ^7.3.5
   happy-dom: ^8.1.2
   husky: ^8.0.3
-  jsdom: ^20.0.3
+  jsdom: ^21.0.0
   lint-staged: ^13.1.0
   lodash-es: ^4.17.21
   markdown-navbar: ^1.4.3
@@ -99,7 +99,7 @@ devDependencies:
   eslint-config-next: 12.3.4_nwctkcr5uyxf47tw7zkgamxmfq
   happy-dom: 8.1.2
   husky: 8.0.3
-  jsdom: 20.0.3
+  jsdom: 21.0.0
   lint-staged: 13.1.0
   next-compose-plugins: 2.2.1
   postcss: 8.4.16
@@ -108,7 +108,7 @@ devDependencies:
   postcss-preset-env: 7.8.1_postcss@8.4.16
   typescript: 4.8.4
   vite: 4.0.4_@types+node@18.7.16
-  vitest: 0.26.3_dysavpvkcapfb7ztaole2brefm
+  vitest: 0.26.3_gvd3zhl547x4qgf5gduze2trim
   windicss: 3.5.6
   windicss-webpack-plugin: 1.7.6
 
@@ -251,11 +251,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dev: true
 
-  /@babel/helper-validator-identifier/7.18.6:
-    resolution: {integrity: sha512-MmetCkz9ej86nJQV+sFCxoGGrUbU3q02kgLciwkrt9QqEB7cP39oKEY0PakknEO0Gu20SskMRi+AYZ3b1TpN9g==}
-    engines: {node: '>=6.9.0'}
-    dev: true
-
   /@babel/helper-validator-identifier/7.19.1:
     resolution: {integrity: sha512-awrNfaMtnHUr653GgGEs++LlAvW6w+DcPrOliSMXWCKo597CwL5Acf/wWdNkf/tfEQE3mjkeD1YOVZOUV/od1w==}
     engines: {node: '>=6.9.0'}
@@ -281,7 +276,7 @@ packages:
     resolution: {integrity: sha512-u7stbOuYjaPezCuLj29hNW1v64M2Md2qupEKP1fHc7WdOA3DgLh37suiSrZYY7haUB7iBeQZ9P1uiRF359do3g==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/helper-validator-identifier': 7.18.6
+      '@babel/helper-validator-identifier': 7.19.1
       chalk: 2.4.2
       js-tokens: 4.0.0
     dev: true
@@ -291,7 +286,7 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
-      '@babel/types': 7.19.0
+      '@babel/types': 7.20.7
     dev: true
 
   /@babel/plugin-transform-react-jsx-self/7.18.6_@babel+core@7.20.12:
@@ -353,15 +348,6 @@ packages:
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@babel/types/7.19.0:
-    resolution: {integrity: sha512-YuGopBq3ke25BVSiS6fgF49Ul9gH1x70Bcr6bqRLjWCkcX8Hre1/5+z+IiWOIerRMSSEfGZVB9z9kyq7wVs9YA==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/helper-string-parser': 7.19.4
-      '@babel/helper-validator-identifier': 7.19.1
-      to-fast-properties: 2.0.0
     dev: true
 
   /@babel/types/7.20.7:
@@ -4293,8 +4279,8 @@ packages:
       argparse: 2.0.1
     dev: true
 
-  /jsdom/20.0.3:
-    resolution: {integrity: sha512-SYhBvTh89tTfCD/CRdSOm13mOBa42iTaTyfyEWBdKcGdPxPtLFBXuHR8XHb33YNYaP+lLbmSvBTsnoesCNJEsQ==}
+  /jsdom/21.0.0:
+    resolution: {integrity: sha512-AIw+3ZakSUtDYvhwPwWHiZsUi3zHugpMEKlNPaurviseYoBqo0zBd3zqoUi3LPCNtPFlEP8FiW9MqCZdjb2IYA==}
     engines: {node: '>=14'}
     peerDependencies:
       canvas: ^2.5.0
@@ -4369,12 +4355,6 @@ packages:
     hasBin: true
     dependencies:
       minimist: 1.2.6
-    dev: true
-
-  /json5/2.2.1:
-    resolution: {integrity: sha512-1hqLFMSrGHRHxav9q9gNjJ5EXznIxGVO09xQRrwplcS8qs28pZ8s8hupZAmqDwZUmVZ2Qb2jnyPOWcDH8m8dlA==}
-    engines: {node: '>=6'}
-    hasBin: true
     dev: true
 
   /json5/2.2.3:
@@ -4532,7 +4512,7 @@ packages:
     dependencies:
       big.js: 5.2.2
       emojis-list: 3.0.0
-      json5: 2.2.1
+      json5: 2.2.3
     dev: true
 
   /local-pkg/0.4.2:
@@ -7357,7 +7337,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.26.3_dysavpvkcapfb7ztaole2brefm:
+  /vitest/0.26.3_gvd3zhl547x4qgf5gduze2trim:
     resolution: {integrity: sha512-FmHxU9aUCxTi23keF3vxb/Qp0lYXaaJ+jRLGOUmMS3qVTOJvgGE+f1VArupA6pEhaG2Ans4X+zV9dqM5WISMbg==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
@@ -7387,7 +7367,7 @@ packages:
       chai: 4.3.7
       debug: 4.3.4
       happy-dom: 8.1.2
-      jsdom: 20.0.3
+      jsdom: 21.0.0
       local-pkg: 0.4.2
       source-map: 0.6.1
       strip-literal: 1.0.0
