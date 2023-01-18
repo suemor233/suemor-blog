@@ -83,7 +83,7 @@
     "@suemor/prettier": "1.1.0",
     "@testing-library/react": "^13.4.0",
     "@types/node": "18.7.16",
-    "@types/react": "18.0.25",
+    "@types/react": "18.0.27",
     "@types/react-dom": "18.0.6",
     "@vitejs/plugin-react": "^3.0.1",
     "commitlint": "^17.4.0",
