@@ -85,8 +85,8 @@ devDependencies:
     specifier: ^12.3.0
     version: 12.3.0
   '@suemor/eslint-config-react-ts':
-    specifier: 1.1.1
-    version: 1.1.1(typescript@4.8.4)
+    specifier: 1.1.2
+    version: 1.1.2(typescript@4.8.4)
   '@suemor/prettier':
     specifier: 1.1.0
     version: 1.1.0
@@ -1288,8 +1288,8 @@ packages:
     resolution: {integrity: sha512-LwzQKA4vzIct1zNZzBmRKI9QuNpLgTQMEjsQLf3BXuGYb3QPTP4Yjf6mkdX+X1mYttZ808QpOwAzZjv28kq7DA==}
     dev: true
 
-  /@suemor/eslint-config-react-ts@1.1.1(typescript@4.8.4):
-    resolution: {integrity: sha512-a55r5Y0TJpUE/UKYatfM+sD1PFgr2mR+yiDoqCUnpBHYfH42ub1yPa4Yz+b5AllB2ZAJs73Nkc3Vnlo3PBkxEA==}
+  /@suemor/eslint-config-react-ts@1.1.2(typescript@4.8.4):
+    resolution: {integrity: sha512-pKDaXE5/8Zgycg1uAaQbeW7JUU9UQRRffgAWZulebUnuePjZgV9srC8CKDRDwTzlwPhGqR7yp/5eniGum0r5OA==}
     peerDependencies:
       typescript: '>=4'
     dependencies:

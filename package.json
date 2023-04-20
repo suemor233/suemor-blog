@@ -79,7 +79,7 @@
     "@commitlint/config-conventional": "^17.4.0",
     "@innei/bump-version": "^1.5.5",
     "@next/bundle-analyzer": "^12.3.0",
-    "@suemor/eslint-config-react-ts": "1.1.1",
+    "@suemor/eslint-config-react-ts": "1.1.2",
     "@suemor/prettier": "1.1.0",
     "@testing-library/react": "^14.0.0",
     "@types/node": "18.15.3",
