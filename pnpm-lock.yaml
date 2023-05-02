@@ -121,8 +121,8 @@ devDependencies:
     specifier: 12.3.4
     version: 12.3.4(eslint@8.39.0)(typescript@4.8.4)
   happy-dom:
-    specifier: ^8.1.2
-    version: 8.1.2
+    specifier: ^9.0.0
+    version: 9.0.0
   husky:
     specifier: ^8.0.3
     version: 8.0.3
@@ -155,7 +155,7 @@ devDependencies:
     version: 4.0.4(@types/node@18.16.3)
   vitest:
     specifier: 0.30.1
-    version: 0.30.1(happy-dom@8.1.2)(jsdom@20.0.3)
+    version: 0.30.1(happy-dom@9.0.0)(jsdom@20.0.3)
   windicss:
     specifier: ^3.5.6
     version: 3.5.6
@@ -3681,17 +3681,15 @@ packages:
       uglify-js: 3.17.4
     dev: true
 
-  /happy-dom@8.1.2:
-    resolution: {integrity: sha512-A/mTzD6KiVMWZynne7R+HlZjIpz9a1Ijh99inqq51Vis1v4G1K+mQeyOo19TXHtoFwAdjx+PzXQGpcyV0yhy9Q==}
+  /happy-dom@9.0.0:
+    resolution: {integrity: sha512-eWEdCL4vwxL6SPutXFQ1z38AK95zl/zwmCcHGaa6cfKw7jTUBA2rAfg0QXeQZTLsLS4fLsEEky7Sh/YBfGn4sQ==}
     dependencies:
       css.escape: 1.5.1
       he: 1.2.0
-      node-fetch: 2.6.7
+      iconv-lite: 0.6.3
       webidl-conversions: 7.0.0
       whatwg-encoding: 2.0.0
       whatwg-mimetype: 3.0.0
-    transitivePeerDependencies:
-      - encoding
     dev: true
 
   /hard-rejection@2.1.0:
@@ -5259,18 +5257,6 @@ packages:
       encoding: 0.1.13
       is-stream: 1.1.0
     dev: false
-
-  /node-fetch@2.6.7:
-    resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
-    engines: {node: 4.x || >=6.0.0}
-    peerDependencies:
-      encoding: ^0.1.0
-    peerDependenciesMeta:
-      encoding:
-        optional: true
-    dependencies:
-      whatwg-url: 5.0.0
-    dev: true
 
   /node-releases@2.0.6:
     resolution: {integrity: sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==}
@@ -6909,10 +6895,6 @@ packages:
       url-parse: 1.5.10
     dev: true
 
-  /tr46@0.0.3:
-    resolution: {integrity: sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==}
-    dev: true
-
   /tr46@3.0.0:
     resolution: {integrity: sha512-l7FvfAHlcmulp8kr+flpQZmVwtu7nfRV7NZujtN0OqES8EL4O4e0qqzL0DC5gAvx/ZC/9lk6rhcUwYvkBnBnYA==}
     engines: {node: '>=12'}
@@ -7274,7 +7256,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest@0.30.1(happy-dom@8.1.2)(jsdom@20.0.3):
+  /vitest@0.30.1(happy-dom@9.0.0)(jsdom@20.0.3):
     resolution: {integrity: sha512-y35WTrSTlTxfMLttgQk4rHcaDkbHQwDP++SNwPb+7H8yb13Q3cu2EixrtHzF27iZ8v0XCciSsLg00RkPAzB/aA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -7319,7 +7301,7 @@ packages:
       chai: 4.3.7
       concordance: 5.0.4
       debug: 4.3.4
-      happy-dom: 8.1.2
+      happy-dom: 9.0.0
       jsdom: 20.0.3
       local-pkg: 0.4.3
       magic-string: 0.30.0
@@ -7352,10 +7334,6 @@ packages:
   /web-namespaces@2.0.1:
     resolution: {integrity: sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ==}
     dev: false
-
-  /webidl-conversions@3.0.1:
-    resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
-    dev: true
 
   /webidl-conversions@7.0.0:
     resolution: {integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==}
@@ -7412,13 +7390,6 @@ packages:
     dependencies:
       tr46: 3.0.0
       webidl-conversions: 7.0.0
-    dev: true
-
-  /whatwg-url@5.0.0:
-    resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
-    dependencies:
-      tr46: 0.0.3
-      webidl-conversions: 3.0.1
     dev: true
 
   /which-boxed-primitive@1.0.2:
